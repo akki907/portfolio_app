@@ -4,9 +4,8 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
+import { BsArrowRight } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
-import { FaGithubSquare, FaMedium } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { contactData } from "@/lib/data";
@@ -52,8 +51,7 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">{`Hello, I'm ${contactData.name}.`}</span> 
-        <span className="font-bold">a seasoned full-stack developer with a passion for crafting exceptional applications. With over 7 years of hands-on experience in the industry</span>.
+        <span className="font-bold">{`Hello, I'm ${contactData.name}. A seasoned full-stack developer with a passion for crafting exceptional applications. With over 7 years of hands-on experience in the industry.`}</span> 
       </motion.h1>
 
       <motion.div
