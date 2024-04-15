@@ -2,8 +2,8 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaGithubSquare, FaMediumM, FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
+import AreenaImg from "@/public/areena.png";
+import suitepeachImg from "@/public/suitepeach.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 import { link } from "fs";
 import { BsLinkedin, BsStackOverflow } from "react-icons/bs";
@@ -57,7 +57,7 @@ export const experiencesData : ExperinceType[] = [
     title: "Software Intern",
     location: "Hyderabad, India",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a Fullstack developer (mean stack).",
+      "In Last Semester of M.C.A ,I had the privilege of collaborating with a dynamic startup where I played a pivotal role in completing a crucial feed system. Leveraging my expertise in full-stack development and my keen problem-solving abilities, I contributed to the design, development, and implementation of this system, ensuring its seamless integration and functionality.",
     icon: React.createElement(LuGraduationCap),
     date: "2016 - 2017",
     company:'SmartWinnr'
@@ -75,16 +75,15 @@ export const experiencesData : ExperinceType[] = [
     title: "Full-Stack Developer",
     location: "Pune, India",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+      "Worked as full-stack developer. My stack includes React, TypeScript, Angular,Python.",
     icon: React.createElement(CgWorkAlt),
     date: "2018 - 2021",
     company: 'Ignite Solutions Pvt. Ltd.'
   },
   {
-    title: "Full-Stack Developer",
+    title: "Senior Software Developer",
     location: "Pune, India",
-    description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+    description:"Worked as full-stack developer. My stack includes React, TypeScript, Node.js, Aws, ReactNative , golang , Aws Lambda, Electron.js",
     icon: React.createElement(CgWorkAlt),
     date: "2021 - Present",
     company: 'Tech9'
@@ -95,26 +94,26 @@ export const experiencesData : ExperinceType[] = [
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "SuitePeach",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: corpcommentImg,
+      "I worked as a full-stack developer on this startup project for 2 years. Edtech for dance.",
+    tags: ["React", "Node.js", "php", "Electron.js", "Aws","sass","Aws-chimes"],
+    imageUrl: suitepeachImg,
   },
   {
-    title: "rmtDev",
+    title: "Areena",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: rmtdevImg,
+      "I was the front-end developer. Gaming Platform for storts in us.",
+    tags: ["React", "TypeScript", "Node.js", "Python", "Redux","ansible"],
+    imageUrl: AreenaImg,
   },
-  {
-    title: "Word Analytics",
-    description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: wordanalyticsImg,
-  },
+  // {
+  //   title: "Word Analytics",
+  //   description:
+  //     "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
+  //   tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+  //   imageUrl: wordanalyticsImg,
+  // },
 ] as const;
 
 export const skillsData = [
@@ -160,7 +159,7 @@ export const contactData = {
       icon:React.createElement(FaMediumM)
     }
   },
-  cvLink:'',
+  cvLink:'https://drive.google.com/file/d/12YItblz1_tSIwKRIU-EOecJVS4ABmFph/view?usp=sharing',
   intro: "Akash is a full-stack developer with 7 years of experience." ,
   imageUrl:"https://media.licdn.com/dms/image/D4D03AQG6bucFi1UBlw/profile-displayphoto-shrink_400_400/0/1707308234897?e=1718841600&v=beta&t=WEywbxDxeth7-wQ9ZuqjjQ7eDxoz2cenJESFmn8m4YM"
 } as const;

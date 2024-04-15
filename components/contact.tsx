@@ -5,29 +5,72 @@ import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
-import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
 import { contactData } from "@/lib/data";
 import EarthCanvas from "./canvas/earth";
 import { slideIn } from "@/lib/utils";
+import { Input } from "./ui/input";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+import { Form, FormControl, FormField, FormItem, FormMessage } from "./ui/form";
+import { Button } from "./ui/button";
+import { Textarea } from "./ui/textarea";
+import { LuLoader2 } from "react-icons/lu";
+
+const formSchema = z.object({
+  email: z.string().email(),
+  message: z
+    .string()
+    .min(10, {
+      message: "Message must be at least 10 characters.",
+    }),
+})
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
 
+  const form = useForm({ resolver: zodResolver(formSchema) });
+  console.log(form.formState)
+
+  const onSubmit = async (formData: any) => {
+    try {
+      const { error } = await sendEmail(formData);
+
+      if (error) {
+        toast.error(error);
+        return;
+      }
+
+      toast.success("Email sent successfully!");
+      form.
+        reset({
+          email: "",
+          message: "",
+        });
+    } catch (e) {
+      toast.error('Something went wrong');
+
+    }
+
+
+  };
+
+
   return (
     <div
-    className={`flex xl:flex-row flex-col  overflow-hidden justify-between place-content-center`}
-  >
+      className={`flex xl:flex-row flex-col gap-4 overflow-hidden justify-between `}
+    >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className=' xl:h-auto md:h-[550px] h-[350px]'
+        className=' xl:h-auto md:h-[550px] h-[350px] w-full xl:w-[50%] relative overflow-hidden'
       >
         <EarthCanvas />
       </motion.div>
       <motion.section
         id="contact"
         ref={ref}
-        className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
+        className="mb-20 sm:mb-28 p-4 text-center"
         initial={{
           opacity: 0,
         }}
@@ -50,37 +93,50 @@ export default function Contact() {
           </a>{" "}
           or through this form.
         </p>
+        <div className="mt-10 flex flex-col dark:text-black self-end sm:self-center">
+          <Form  {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        className="h-14 px-4 rounded-lg  dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
 
-        <form
-          className="mt-10 flex flex-col dark:text-black"
-          action={async (formData) => {
-            const { data, error } = await sendEmail(formData);
+                        placeholder="email" {...field} />
+                    </FormControl>
 
-            if (error) {
-              toast.error(error);
-              return;
-            }
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Textarea
+                        className="h-52 resize-none my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+                        placeholder="Your message"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button disabled={form?.formState?.isSubmitting} type="submit">
+                {form?.formState?.isSubmitting ?
+                  <><LuLoader2 className="mr-2 h-4 w-4 animate-spin" />Please wait</> :
+                  'Submit'}
 
-            toast.success("Email sent successfully!");
-          }}
-        >
-          <input
-            className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-            name="senderEmail"
-            type="email"
-            required
-            maxLength={500}
-            placeholder="Your email"
-          />
-          <textarea
-            className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-            name="message"
-            placeholder="Your message"
-            required
-            maxLength={5000}
-          />
-          <SubmitBtn />
-        </form>
+              </Button>
+            </form>
+          </Form>
+        </div>
       </motion.section>
     </div>
   );
