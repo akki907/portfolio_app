@@ -1,6 +1,6 @@
 import Header from "@/components/header";
 import "./globals.css";
-import { Roboto,JetBrains_Mono,Pacifico,Seymour_One,Permanent_Marker,Russo_One,Mulish } from "next/font/google";
+import {Mulish } from "next/font/google";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import Footer from "@/components/footer";
 import ThemeContextProvider from "@/context/theme-context";
