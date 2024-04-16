@@ -1,11 +1,9 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaGithubSquare, FaMediumM, FaReact } from "react-icons/fa";
+import { FaGithubSquare, FaMediumM } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import AreenaImg from "@/public/areena.png";
-import suitepeachImg from "@/public/suitepeach.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
-import { link } from "fs";
+import AreenaImg from "@/public/projects/areena.png";
+import suitepeachImg from "@/public/projects/suitepeach.png";
 import { BsLinkedin, BsStackOverflow } from "react-icons/bs";
 
 export const links = [
@@ -35,7 +33,13 @@ export const links = [
   },
 ] as const;
 
-export const aboutData = {
+interface aboutDataType {
+  title: string;
+  description: string;
+  imageUrl: string;
+}
+
+export const aboutData :aboutDataType = {
   title: "About me",
   description:
     "I'm a full-stack developer based in Houston, TX. I have experience in building web applications using React, Next.js, TypeScript, Tailwind, Prisma and MongoDB.",

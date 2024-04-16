@@ -34,18 +34,18 @@ export default function ThemeContextProvider({
   };
 
   useEffect(() => {
-    const localTheme = window.localStorage.getItem("theme") as Theme | null;
+    const localTheme = DEFAULT_THEME || window.localStorage.getItem("theme") as Theme | null;
 
-    if (localTheme) {
+    // if (localTheme) {
+    //   setTheme(localTheme);
+
+    //   if (localTheme === "dark") {
+    //     document.documentElement.classList.add("dark");
+    //   }
+    // } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       setTheme(localTheme);
-
-      if (localTheme === "dark") {
-        document.documentElement.classList.add("dark");
-      }
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    }
+      document.documentElement.classList.add(localTheme);
+    // }
   }, []);
 
   return (

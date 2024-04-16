@@ -22,8 +22,8 @@ const formSchema = z.object({
   email: z.string().email(),
   message: z
     .string()
-    .min(10, {
-      message: "Message must be at least 10 characters.",
+    .min(5, {
+      message: "Message must be at least 5 characters.",
     }),
 })
 
@@ -31,7 +31,6 @@ export default function Contact() {
   const { ref } = useSectionInView("Contact");
 
   const form = useForm({ resolver: zodResolver(formSchema) });
-  console.log(form.formState)
 
   const onSubmit = async (formData: any) => {
     try {
