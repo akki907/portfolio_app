@@ -12,6 +12,7 @@ import Skills from "@/components/skills";
 import LoaderSimple from "@/components/LoaderSimple";
 import Header from "@/components/header";
 import StarsCanvas from "@/components/StarsCanvas";
+// import SplashScreen from "@/components/SplashScreen";
 
 
 export default function Home() {

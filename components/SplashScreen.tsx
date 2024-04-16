@@ -1,44 +1,84 @@
 "use client";
+//@ts-nocheck
+import React, { useState, useEffect } from "react"
+import Image from "next/image"
+import anime from "animejs"
+import { contactData } from "@/lib/data";
 
-import React, { useEffect } from 'react';
-import anime from 'animejs';
+interface SplashScreenProps {
+    finishLoading: () => void
+    }
 
-const SplashScreen = () => {
-  useEffect(() => {
-    const timeline = anime.timeline({
-      duration: 1500,
-    });
+const SplashScreen = ({ finishLoading }:SplashScreenProps) => {
+  const [isMounted, setIsMounted] = useState(false)
+  const animate = () => {
+    const loader = anime.timeline({
+      complete: () => finishLoading(),
+    })
 
-    timeline
+    loader
       .add({
-        targets: '.splash-logo',
-        opacity: [0, 1],
-        translateY: ['-100%', 0],
-        easing: 'easeOutExpo',
-      })
-      .add({
-        targets: '.splash-logo',
-        opacity: [1, 0],
-        translateY: [0, '100%'],
-        easing: 'easeInExpo',
-        delay: 1000,
-      })
-      .add({
-        targets: '.splash-screen',
-        opacity: [1, 0],
-        easing: 'linear',
+        targets: "#logo",
+        delay: 0,
+        scale: 1,
         duration: 500,
-        complete: () => {
-          // Redirect or hide splash screen
-        },
-      });
-  }, []);
+        easing: "easeInOutExpo",
+      })
+      .add({
+        targets: "#logo",
+        delay: 100,
+        scale: 1.25,
+        duration: 500,
+        easing: "easeInOutExpo",
+      })
+      .add({
+        targets: "#logo",
+        delay: 100,
+        scale: 1,
+        duration: 500,
+        easing: "easeInOutExpo",
+      })
+      .add({
+        targets: "#logo",
+        delay: 100,
+        scale: 1.25,
+        duration: 500,
+        easing: "easeInOutExpo",
+      })
+      .add({
+        targets: "#logo",
+        delay: 100,
+        scale: 1,
+        duration: 500,
+        easing: "easeInOutExpo",
+      })
+  }
 
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsMounted(true), 10)
+    animate()
+    return () => clearTimeout(timeout)
+  }, [])
+ //@ts-ignore
   return (
-    <div className="splash-screen fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-gray-900 text-white">
-      <div className="splash-logo text-4xl font-bold">Your Splash Screen Content</div>
+    <div
+      className="flex items-center justify-center"
+    //   isMounted={isMounted}
+    >
+          <Image
+          id="logo"
+              src={contactData.imageUrl}
+              alt={contactData.name}
+              width="250"
+              height="250"
+              quality="100"
+              priority={true}
+              className="h-35 w-35 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+            />
+      {/* <Image id="logo" src={contactData.imageUrl} alt="" width={60} height={60} /> */}
     </div>
-  );
-};
+  )
+}
 
-export default SplashScreen;
+export default SplashScreen
+
