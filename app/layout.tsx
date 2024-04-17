@@ -2,9 +2,9 @@ import "./globals.css";
 import {Mulish } from "next/font/google";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import ThemeContextProvider from "@/context/theme-context";
-import { Toaster } from "react-hot-toast";
 import { contactData } from "@/lib/data";
-import SplashScreen from "@/components/SplashScreen";
+// import SplashScreen from "@/components/SplashScreen";
+import { Toaster } from "@/components/ui/toaster";
 
 const fonts = Mulish({
   weight: ['400',],
@@ -33,7 +33,7 @@ export default function RootLayout({
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             {children}
-            <Toaster position="top-right" />
+            <Toaster />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>

@@ -5,7 +5,6 @@ import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
-import toast from "react-hot-toast";
 import { contactData } from "@/lib/data";
 import EarthCanvas from "./canvas/earth";
 import { slideIn } from "@/lib/utils";
@@ -17,6 +16,7 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from "./ui/form";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { LuLoader2 } from "react-icons/lu";
+import { useToast } from "./ui/use-toast";
 
 const formSchema = z.object({
   email: z.string().email(),
@@ -29,6 +29,7 @@ const formSchema = z.object({
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
+  const { toast } = useToast();
 
   const form = useForm({ resolver: zodResolver(formSchema) });
 
@@ -37,19 +38,26 @@ export default function Contact() {
       const { error } = await sendEmail(formData);
 
       if (error) {
-        toast.error(error);
+        toast({
+          variant: "destructive",
+          title: error,
+        });
         return;
       }
-
-      toast.success("Email sent successfully!");
+      toast({
+        variant: "default" ,
+        title: "Email sent successfully!",
+      });
       form.
         reset({
           email: "",
           message: "",
         });
     } catch (e) {
-      toast.error('Something went wrong');
-
+      toast({
+        variant: "destructive",
+        title: "An error occurred",
+      });
     }
 
 
