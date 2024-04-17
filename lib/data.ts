@@ -5,6 +5,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import AreenaImg from "@/public/projects/areena.png";
 import suitepeachImg from "@/public/projects/suitepeach.png";
 import { BsLinkedin, BsStackOverflow } from "react-icons/bs";
+import { link } from "fs";
 
 export const links = [
   {
@@ -103,6 +104,7 @@ export const projectsData = [
       "I worked as a full-stack developer on this startup project for 2 years. Edtech for dance.",
     tags: ["React", "Node.js", "php", "Electron.js", "Aws","sass","Aws-chimes"],
     imageUrl: suitepeachImg,
+    link:"https://app.suitepeach.com/"
   },
   {
     title: "Areena",
@@ -110,6 +112,7 @@ export const projectsData = [
       "I was the front-end developer. Gaming Platform for storts in us.",
     tags: ["React", "TypeScript", "Node.js", "Python", "Redux","ansible"],
     imageUrl: AreenaImg,
+    link:"https://www.areenasports.com/"
   },
   // {
   //   title: "Word Analytics",
