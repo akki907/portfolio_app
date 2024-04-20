@@ -12,6 +12,7 @@ import Skills from "@/components/skills";
 import LoaderSimple from "@/components/LoaderSimple";
 import Header from "@/components/header";
 import StarsCanvas from "@/components/StarsCanvas";
+// import Particle from "@/components/Particle";
 // import SplashScreen from "@/components/SplashScreen";
 
 
@@ -26,14 +27,14 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <main className="flex flex-col items-center px-4 ">
+    <main className="flex flex-col items-center px-4 relative ">
+
       {loading ? (
         <LoaderSimple />
       ) : (
-        <Suspense fallback={<LoaderSimple/>}>
+        <Suspense fallback={<LoaderSimple />}>
           <>
             <Header />
-
             <Intro />
             <SectionDivider />
             <About />
@@ -41,10 +42,12 @@ export default function Home() {
             <Skills />
             <Experience />
             <Contact />
+            {/* <div className="absolute right-0 top-0 bottom-0 h-screen w-[100%] z-[0]">
+              <Particle color="#676394" />
+            </div> */}
             <StarsCanvas />
-
           </>
-       </Suspense>
+        </Suspense>
       )}
 
     </main>
