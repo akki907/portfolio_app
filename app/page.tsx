@@ -11,7 +11,7 @@ import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
 import LoaderSimple from "@/components/LoaderSimple";
 import Header from "@/components/header";
-import StarsCanvas from "@/components/StarsCanvas";
+import StarsCanvasBackGround from "@/components/StarBackground";
 // import Particle from "@/components/Particle";
 // import SplashScreen from "@/components/SplashScreen";
 
@@ -45,7 +45,8 @@ export default function Home() {
             {/* <div className="absolute right-0 top-0 bottom-0 h-screen w-[100%] z-[0]">
               <Particle color="#676394" />
             </div> */}
-            <StarsCanvas />
+            {/* <StarsCanvas /> */}
+            <StarsCanvasBackGround />
           </>
         </Suspense>
       )}

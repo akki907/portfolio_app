@@ -51,7 +51,8 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">{`Hello, I'm ${contactData.name}. A seasoned full-stack developer with a passion for crafting exceptional applications. With over 7 years of hands-on experience in the industry.`}</span> 
+      
+        <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">{`Hello, I'm ${contactData.name}. A seasoned full-stack developer with a passion for crafting exceptional applications. With over 7 years of hands-on experience in the industry.`}</span> 
       </motion.h1>
 
       <motion.div
