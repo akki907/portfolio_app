@@ -5,7 +5,6 @@ import { LuGraduationCap } from "react-icons/lu";
 import AreenaImg from "@/public/projects/areena.png";
 import suitepeachImg from "@/public/projects/suitepeach.png";
 import { BsLinkedin, BsStackOverflow } from "react-icons/bs";
-import { link } from "fs";
 
 export const links = [
   {
@@ -40,10 +39,10 @@ interface aboutDataType {
   imageUrl: string;
 }
 
-export const aboutData :aboutDataType = {
+export const aboutData: aboutDataType = {
   title: "About me",
   description:
-    "I'm a full-stack developer based in Houston, TX. I have experience in building web applications using React, Next.js, TypeScript, Tailwind, Prisma and MongoDB.",
+    "I'm a full-stack developer based in Pune, India. I have experience in building web applications using React, Next.js, TypeScript, Tailwind, Prisma and MongoDB.",
   imageUrl:
     "https://media.licdn.com/dms/image/D4D03AQG6bucFi1UBlw/profile-displayphoto-shrink_400_400/0/1707308234897?e=1718841600&v=beta&t=WEywbxDxeth7-wQ9ZuqjjQ7eDxoz2cenJESFmn8m4YM",
 } as const;
@@ -57,7 +56,7 @@ interface ExperinceType {
   company?: string;
 }
 
-export const experiencesData : ExperinceType[] = [
+export const experiencesData: ExperinceType[] = [
   {
     title: "Software Intern",
     location: "Hyderabad, India",
@@ -65,7 +64,7 @@ export const experiencesData : ExperinceType[] = [
       "In Last Semester of M.C.A ,I had the privilege of collaborating with a dynamic startup where I played a pivotal role in completing a crucial feed system. Leveraging my expertise in full-stack development and my keen problem-solving abilities, I contributed to the design, development, and implementation of this system, ensuring its seamless integration and functionality.",
     icon: React.createElement(LuGraduationCap),
     date: "2016 - 2017",
-    company:'SmartWinnr'
+    company: 'SmartWinnr'
   },
   {
     title: "FullStack Developer",
@@ -74,7 +73,7 @@ export const experiencesData : ExperinceType[] = [
       "I worked as a Fullstack-end developer for 1 years. Worked on 3 projects two of them was as fullstack and one was as a backend.",
     icon: React.createElement(CgWorkAlt),
     date: "2017 - 2018",
-    company:'Geek Informatic Pvt. Ltd.'
+    company: 'Geek Informatic Pvt. Ltd.'
   },
   {
     title: "Full-Stack Developer",
@@ -88,7 +87,7 @@ export const experiencesData : ExperinceType[] = [
   {
     title: "Senior Software Developer",
     location: "Pune, India",
-    description:"Worked as full-stack developer. My stack includes React, TypeScript, Node.js, Aws, ReactNative , golang , Aws Lambda, Electron.js",
+    description: "Worked as full-stack developer. My stack includes React, TypeScript, Node.js, Aws, ReactNative , golang , Aws Lambda, Electron.js",
     icon: React.createElement(CgWorkAlt),
     date: "2021 - Present",
     company: 'Tech9'
@@ -102,17 +101,17 @@ export const projectsData = [
     title: "SuitePeach",
     description:
       "I worked as a full-stack developer on this startup project for 2 years. Edtech for dance.",
-    tags: ["React", "Node.js", "php", "Electron.js", "Aws","sass","Aws-chimes"],
+    tags: ["React", "Node.js", "php", "Electron.js", "Aws", "sass", "Aws-chimes"],
     imageUrl: suitepeachImg,
-    link:"https://app.suitepeach.com/"
+    link: "https://app.suitepeach.com/"
   },
   {
     title: "Areena",
     description:
       "I was the front-end developer. Gaming Platform for storts in us.",
-    tags: ["React", "TypeScript", "Node.js", "Python", "Redux","ansible"],
+    tags: ["React", "TypeScript", "Node.js", "Python", "Redux", "ansible"],
     imageUrl: AreenaImg,
-    link:"https://www.areenasports.com/"
+    link: "https://www.areenasports.com/"
   },
   // {
   //   title: "Word Analytics",
@@ -145,31 +144,38 @@ export const skillsData = [
 
 export const contactData = {
   email: "ak.akki907@gmail.com",
-  phone_no:"7598608395",
+  phone_no: "7598608395",
   name: "Akash Kumar",
-  socialMedia:{
-    linkedin:{
-      link:"https://www.linkedin.com/in/akki907/",
-      icon:React.createElement(BsLinkedin)
+  socialMedia: {
+    linkedin: {
+      link: "https://www.linkedin.com/in/akki907/",
+      icon: React.createElement(BsLinkedin)
     },
-    stackoverflow:{
-      link:"https://stackoverflow.com/users/15549708/akki907",
-      icon:React.createElement(BsStackOverflow)
+    stackoverflow: {
+      link: "https://stackoverflow.com/users/15549708/akki907",
+      icon: React.createElement(BsStackOverflow)
     },
-    github:{
-      link:"https://github.com/akki907",
-      icon:React.createElement(FaGithubSquare)
+    github: {
+      link: "https://github.com/akki907",
+      icon: React.createElement(FaGithubSquare)
 
     },
-    medium :{
-      link:"https://medium.com/@ak.akki907",
-      icon:React.createElement(FaMediumM)
+    medium: {
+      link: "https://medium.com/@ak.akki907",
+      icon: React.createElement(FaMediumM)
     }
   },
-  cvLink:'https://drive.google.com/file/d/12YItblz1_tSIwKRIU-EOecJVS4ABmFph/view?usp=sharing',
-  intro: "Akash is a full-stack developer with 7 years of experience." ,
-  imageUrl:"https://media.licdn.com/dms/image/D4D03AQG6bucFi1UBlw/profile-displayphoto-shrink_400_400/0/1707308234897?e=1718841600&v=beta&t=WEywbxDxeth7-wQ9ZuqjjQ7eDxoz2cenJESFmn8m4YM"
+  cvLink: 'https://drive.google.com/file/d/12YItblz1_tSIwKRIU-EOecJVS4ABmFph/view?usp=sharing',
+  intro: "Akash is a full-stack developer with 7 years of experience.",
+  imageUrl: "https://media.licdn.com/dms/image/D4D03AQG6bucFi1UBlw/profile-displayphoto-shrink_400_400/0/1707308234897?e=1718841600&v=beta&t=WEywbxDxeth7-wQ9ZuqjjQ7eDxoz2cenJESFmn8m4YM"
 } as const;
 
 
 export const DEFAULT_THEME = "dark" as const;
+
+export const METADATA = {
+  title: "Portfolio | Akash Kumar",
+  description:
+    aboutData.description,
+  siteUrl: "https://portfolio-app-akash.vercel.app/",
+};

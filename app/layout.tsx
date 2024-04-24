@@ -2,7 +2,7 @@ import "./globals.css";
 import {Mulish } from "next/font/google";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import ThemeContextProvider from "@/context/theme-context";
-import { contactData } from "@/lib/data";
+import { METADATA, contactData } from "@/lib/data";
 // import SplashScreen from "@/components/SplashScreen";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -14,8 +14,8 @@ const fonts = Mulish({
 })
 
 export const metadata = {
-  title: `${contactData.name} | Personal Portfolio`,
-  description: "Akash is a full-stack developer with 7 years of experience.",
+  title: METADATA.title,
+  description: METADATA.description,
 };
 
 export default function RootLayout({
