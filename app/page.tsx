@@ -15,9 +15,6 @@ import StarsCanvasBackGround from "@/components/StarBackground";
 import ProgressIndicator from "@/components/ProgressIndicator";
 import Layout from "@/components/Layout";
 
-
-export const NO_MOTION_PREFERENCE_QUERY =
-  "(prefers-reduced-motion: no-preference)";
 export interface IDesktop {
   isDesktop: boolean;
 }
