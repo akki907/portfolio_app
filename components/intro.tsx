@@ -32,15 +32,15 @@ export default function Intro() {
             }}
           >
             {contactData.imageUrl && (
-            <Image
-              src={contactData.imageUrl}
-              alt={contactData.name}
-              width="250"
-              height="250"
-              quality="100"
-              priority={true}
-              className="h-35 w-35 rounded-full object-cover border-[0.35rem] border-white shadow-xl z-[5]"
-            />
+              <Image
+                src={contactData.imageUrl}
+                alt={contactData.name}
+                width="250"
+                height="250"
+                quality="100"
+                priority={true}
+                className="h-35 w-35 rounded-full object-cover border-[0.35rem] border-white shadow-xl z-[5]"
+              />
             )}
           </motion.div>
         </div>
@@ -51,8 +51,8 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-      
-        <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">{`Hello, I'm ${contactData.name}. A seasoned full-stack developer with a passion for crafting exceptional applications. With over 7 years of hands-on experience in the industry.`}</span> 
+
+        <span className="font-bold text-white ">{`Hello, I'm ${contactData.name}. A seasoned full-stack developer with a passion for crafting exceptional applications. With over 7 years of hands-on experience in the industry.`}</span>
       </motion.h1>
 
       <motion.div
@@ -86,20 +86,20 @@ export default function Intro() {
         </a>
         <div className="flex gap-2 align-middle ">
 
-        {Object.values(contactData.socialMedia).map((i,index)=> (
-          <Button
-            key={i.link}
-            className="bg-white group-hover:translate-y-1  opacity-60  p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-            onClick={() => {
-              window.open(i.link, "_blank");
-            }}
-          >
-            {i.icon}
-          </Button>
-        ))}
+          {Object.values(contactData.socialMedia).map((i, index) => (
+            <Button
+              key={i.link}
+              className="bg-white group-hover:translate-y-1  opacity-60  p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+              onClick={() => {
+                window.open(i.link, "_blank");
+              }}
+            >
+              {i.icon}
+            </Button>
+          ))}
         </div>
 
-      
+
       </motion.div>
     </section>
   );
