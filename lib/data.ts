@@ -152,7 +152,7 @@ export const contactData = {
       icon: React.createElement(BsLinkedin)
     },
     stackoverflow: {
-      link: "https://stackoverflow.com/users/15549708/akki907",
+      link: "https://stackoverflow.com/users/6021306/akash-kumar",
       icon: React.createElement(BsStackOverflow)
     },
     github: {
