@@ -14,6 +14,7 @@ import Header from "@/components/header";
 import StarsCanvasBackGround from "@/components/StarBackground";
 import ProgressIndicator from "@/components/ProgressIndicator";
 import Layout from "@/components/Layout";
+import AnimatedCursor from "@/components/CustomCursor";
 
 export interface IDesktop {
   isDesktop: boolean;
@@ -42,6 +43,7 @@ export default function Home() {
                 <Experience />
                 <Contact />
                 <StarsCanvasBackGround />
+                <AnimatedCursor />
               </>
             </Suspense>
           </main>
