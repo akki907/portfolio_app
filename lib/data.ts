@@ -146,6 +146,7 @@ export const contactData = {
   email: "ak.akki907@gmail.com",
   phone_no: "7598608395",
   name: "Akash Kumar",
+  typewriterOptions: { strings: ["FullStack Developer", "Front End Developer", "React Js Developer", "Javascript Developer", "Node.js Developer", "Python Developer"], autoStart: true, loop: true, deleteSpeed: 30 },
   socialMedia: {
     linkedin: {
       link: "https://www.linkedin.com/in/akki907/",

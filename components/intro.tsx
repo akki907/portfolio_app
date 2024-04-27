@@ -10,6 +10,7 @@ import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { contactData } from "@/lib/data";
 import { Button } from "./ui/button";
+import Typewriter from "typewriter-effect";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
@@ -51,8 +52,13 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-
-        <span className="font-bold text-white ">{`Hello, I'm ${contactData.name}. A seasoned full-stack developer with a passion for crafting exceptional applications. With over 7 years of hands-on experience in the industry.`}</span>
+        <h2 className="text-2xl font-semibold leading-tight text-white  lg:text-3xl">
+          Hello <span className="wave">👋</span>
+        </h2>
+        <h2 className="pt-2 text-2xl font-semibold leading-tight text-white ">
+          Im {contactData.name}
+        </h2>
+        <Typewriter options={{ strings: ["FullStack Developer", "Front End Developer", "React Js Developer", "Javascript Developer", "Node.js Developer", "Python Developer"], autoStart: true, loop: true, deleteSpeed: 30 }} />
       </motion.h1>
 
       <motion.div
