@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { gsap, Expo } from "gsap";
 import styled from "styled-components";
 
-const Preloader = ({setLoading}:any) => {
+const Preloader = ({ setLoading }: any) => {
   const [counter, setCounter] = useState(0);
   useEffect(() => {
     //@ts-ignore
@@ -17,49 +16,125 @@ const Preloader = ({setLoading}:any) => {
   }, []);
 
   async function reveal() {
-    const t1 =  gsap.timeline({});
-
-      await t1
-      .to(".follow", {
-        width: "100%",
-        ease: Expo.easeInOut,
-        duration: 1.2,
-        delay: 0.5,
-      })
-      .to(".hide", { opacity: 0, duration: 0.3 })
-      .to(".follow", {
-        height: "100%",
-        ease: Expo.easeInOut,
-        duration: 0.7,
-      })
-      .to(".content", { width: "100%", ease: Expo.easeInOut, duration: 0.7 });
-    if (!t1.isActive()) {
-       await setLoading(false);
-    }
+      await setLoading(false);
   }
 
   return (
     <AppContainer>
-      <Loading>
-        <Follow className="follow"></Follow>
-        <ProgressBar
-          className="hide"
-          id="progress-bar"
-          style={{ width: counter + "%" }}
-        ></ProgressBar>
-      </Loading>
-
-      <Content className="content"></Content>
+      <div className="loader">
+   <div data-glitch="Loading..." className="glitch">Loading...</div>
+</div>
+      {/* <div className="loader">
+        <span className="loader-text">loading</span>
+        <span className="load"></span>
+      </div> */}
     </AppContainer>
   );
 };
+
+
 
 const AppContainer = styled.div`
   width: 100vw;
   height: 100vh;
   color: #000000;
-  position: relative;
   cursor: progress;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .glitch {
+    position: relative;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    letter-spacing: 5px;
+    z-index: 1;
+    animation: shift 1s ease-in-out infinite alternate;
+  }
+  
+  .glitch:before,
+  .glitch:after {
+    display: block;
+    content: attr(data-glitch);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+  }
+  
+  .glitch:before {
+    animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: #8b00ff;
+    z-index: -1;
+  }
+  
+  .glitch:after {
+    animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    color: #00e571;
+    z-index: -2;
+  }
+  
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
+    }
+  
+    20% {
+      transform: translate(-3px, 3px);
+    }
+  
+    40% {
+      transform: translate(-3px, -3px);
+    }
+  
+    60% {
+      transform: translate(3px, 3px);
+    }
+  
+    80% {
+      transform: translate(3px, -3px);
+    }
+  
+    to {
+      transform: translate(0);
+    }
+  }
+  
+  @keyframes shift {
+    0%, 40%, 44%, 58%, 61%, 65%, 69%, 73%, 100% {
+      transform: skewX(0deg);
+    }
+  
+    41% {
+      transform: skewX(10deg);
+    }
+  
+    42% {
+      transform: skewX(-10deg);
+    }
+  
+    59% {
+      transform: skewX(40deg) skewY(10deg);
+    }
+  
+    60% {
+      transform: skewX(-40deg) skewY(-10deg);
+    }
+  
+    63% {
+      transform: skewX(10deg) skewY(-5deg);
+    }
+  
+    70% {
+      transform: skewX(-50deg) skewY(-20deg);
+    }
+  
+    71% {
+      transform: skewX(10deg) skewY(-10deg);
+    }
+  }
+  
 `;
 const Loading = styled.div`
   height: 100%;
