@@ -15,6 +15,8 @@ import StarsCanvasBackGround from "@/components/StarBackground";
 import ProgressIndicator from "@/components/ProgressIndicator";
 import Layout from "@/components/Layout";
 import AnimatedCursor from "@/components/CustomCursor";
+import { FollowerPointerCard } from "@/components/ui/following-pointer";
+import { TracingBeam } from "@/components/ui/tracing-beam";
 
 export interface IDesktop {
   isDesktop: boolean;
@@ -31,7 +33,7 @@ export default function Home() {
         ) : (
           <main className="flex flex-col items-center px-4  pt-40">
             <Suspense fallback={<Preloader />}>
-              <>
+              {/* <FollowerPointerCard title='Akash'> */}
                 <div className="bg-[#946263] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] "></div>
                 <Header />
                 <ProgressIndicator />
@@ -44,7 +46,7 @@ export default function Home() {
                 <Contact />
                 <StarsCanvasBackGround />
                 <AnimatedCursor />
-              </>
+              {/* </FollowerPointerCard> */}
             </Suspense>
           </main>
         )}

@@ -371,3 +371,38 @@
     transform: scale(1);
   }
 }
+
+.fancy-image {
+  background: linear-gradient(to right, #3c1053, #ad5389);
+  animation: border-radius-animation 8s infinite;
+  padding: 0.5rem;
+}
+
+@keyframes border-radius-animation {
+  0%, 100% {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+  25% {
+    border-radius: 40% 60% 70% 30% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 70% 30% 40% 60% / 40% 60% 30% 70%;
+  }
+  75% {
+    border-radius: 30% 70% 60% 40% / 70% 40% 60% 30%;
+  }
+}
+@keyframes wobble-animation {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(3deg) scale(1.05);
+  }
+  50% {
+    transform: rotate(-3deg) scale(1.05);
+  }
+  75% {
+    transform: rotate(3deg) scale(1.05);
+  }
+}

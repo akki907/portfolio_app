@@ -31,6 +31,7 @@ export default function Intro() {
               type: "tween",
               duration: 0.2,
             }}
+            className="w-80 h-80 overflow-hidden relative"
           >
             {contactData.imageUrl && (
               <Image
@@ -40,7 +41,7 @@ export default function Intro() {
                 height="250"
                 quality="100"
                 priority={true}
-                className="h-35 w-35 rounded-full object-cover border-[0.35rem] border-white shadow-xl z-[5]"
+                className="h-35 w-35 rounded-full object-cover border-[0.35rem] border-white shadow-xl z-[5] w-full h-full transition-all duration-400 fancy-image"
               />
             )}
           </motion.div>
