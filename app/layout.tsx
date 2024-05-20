@@ -3,7 +3,6 @@ import {Mulish } from "next/font/google";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import ThemeContextProvider from "@/context/theme-context";
 import { METADATA, contactData } from "@/lib/data";
-// import SplashScreen from "@/components/SplashScreen";
 import { Toaster } from "@/components/ui/toaster";
 
 const fonts = Mulish({
@@ -13,10 +12,10 @@ const fonts = Mulish({
   display: 'swap',
 })
 
-export const metadata = {
-  title: METADATA.title,
-  description: METADATA.description,
-};
+// export const metadata = {
+//   title: METADATA.title,
+//   description: METADATA.description,
+// };
 
 export default function RootLayout({
   children,
