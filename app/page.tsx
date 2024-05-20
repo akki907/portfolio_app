@@ -17,6 +17,7 @@ import Layout from "@/components/Layout";
 import AnimatedCursor from "@/components/CustomCursor";
 import Head from "next/head";
 import { METADATA } from "@/lib/data";
+import HeaderUpdate from "@/components/HeaderUpdate";
 
 export interface IDesktop {
   isDesktop: boolean;
@@ -38,7 +39,7 @@ export default function Home() {
             <Suspense fallback={<Preloader />}>
               {/* <FollowerPointerCard title='Akash'> */}
               <div className="bg-[#946263] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] "></div>
-              <Header />
+              <HeaderUpdate />
               <ProgressIndicator />
               <Intro />
               <SectionDivider />
@@ -48,7 +49,7 @@ export default function Home() {
               <Experience />
               <Contact />
               <StarsCanvasBackGround />
-              <AnimatedCursor />
+              {/* <AnimatedCursor /> */}
               {/* </FollowerPointerCard> */}
             </Suspense>
           </main>
