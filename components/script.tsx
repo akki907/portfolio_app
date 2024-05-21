@@ -1,8 +1,6 @@
-
-
-import { CHATPORT_APP_ID, GTAG } from "@/lib/constants";
 import Script from "next/script";
 import React from "react";
+import { CHATPORT_APP_ID, GTAG } from "@/lib/constants";
 
 const Scripts = React.memo(() => {
   return (
