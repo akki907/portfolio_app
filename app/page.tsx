@@ -18,6 +18,7 @@ import AnimatedCursor from "@/components/CustomCursor";
 import Head from "next/head";
 import { METADATA } from "@/lib/data";
 import HeaderUpdate from "@/components/HeaderUpdate";
+import Scripts from "@/components/script";
 
 export interface IDesktop {
   isDesktop: boolean;
@@ -49,6 +50,7 @@ export default function Home() {
               <Experience />
               <Contact />
               <StarsCanvasBackGround />
+              <Scripts />
               {/* <AnimatedCursor /> */}
               {/* </FollowerPointerCard> */}
             </Suspense>
