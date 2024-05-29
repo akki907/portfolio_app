@@ -168,7 +168,20 @@ export const contactData = {
   },
   cvLink: 'https://drive.google.com/file/d/1VeEvSB-5h89KLQ2ENpSCShkytSYQT-bP/view?usp=sharing',
   intro: "Akash is a full-stack developer with 7 years of experience.",
-  imageUrl: "https://media.licdn.com/dms/image/D4D03AQG6bucFi1UBlw/profile-displayphoto-shrink_400_400/0/1707308234897?e=1718841600&v=beta&t=WEywbxDxeth7-wQ9ZuqjjQ7eDxoz2cenJESFmn8m4YM"
+  imageUrl: "https://media.licdn.com/dms/image/D4D03AQG6bucFi1UBlw/profile-displayphoto-shrink_400_400/0/1707308234897?e=1718841600&v=beta&t=WEywbxDxeth7-wQ9ZuqjjQ7eDxoz2cenJESFmn8m4YM",
+  aboutMe:`After graduating with a degree in
+  Computer science, I decided to pursue my
+  passion for programming. I have been coding for 10 years now.
+  My favorite part of programming is the
+  problem-solving aspect. I love the
+  feeling of finally figuring out a solution to a problem. My core stack
+  is
+  React, Next.js, Node.js, golang and MongoDB
+  I am also familiar with TypeScript and Aws. I am always looking to
+  learn new technologies. I am currently looking for a
+  full-time position as a software developer.
+  
+  When I'm not coding, I enjoy Traveling watching movies, and learning new things.`
 } as const;
 
 

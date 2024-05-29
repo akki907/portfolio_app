@@ -51,8 +51,7 @@ export default function Home() {
               <Contact />
               <StarsCanvasBackGround />
               <Scripts />
-              {/* <AnimatedCursor /> */}
-              {/* </FollowerPointerCard> */}
+              <AnimatedCursor />
             </Suspense>
           </main>
         )}
