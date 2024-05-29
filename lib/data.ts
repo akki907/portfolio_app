@@ -58,22 +58,12 @@ interface ExperinceType {
 
 export const experiencesData: ExperinceType[] = [
   {
-    title: "Software Intern",
-    location: "Hyderabad, India",
-    description:
-      "In Last Semester of M.C.A ,I had the privilege of collaborating with a dynamic startup where I played a pivotal role in completing a crucial feed system. Leveraging my expertise in full-stack development and my keen problem-solving abilities, I contributed to the design, development, and implementation of this system, ensuring its seamless integration and functionality.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2016 - 2017",
-    company: 'SmartWinnr'
-  },
-  {
-    title: "FullStack Developer",
-    location: "Chandigarh, India",
-    description:
-      "I worked as a Fullstack-end developer for 1 years. Worked on 3 projects two of them was as fullstack and one was as a backend.",
+    title: "Senior Software Developer",
+    location: "Pune, India",
+    description: "Worked as full-stack developer. My stack includes React, TypeScript, Node.js, Aws, ReactNative , golang , Aws Lambda, Electron.js",
     icon: React.createElement(CgWorkAlt),
-    date: "2017 - 2018",
-    company: 'Geek Informatic Pvt. Ltd.'
+    date: "2021 - Present",
+    company: 'Tech9'
   },
   {
     title: "Full-Stack Developer",
@@ -85,12 +75,22 @@ export const experiencesData: ExperinceType[] = [
     company: 'Ignite Solutions Pvt. Ltd.'
   },
   {
-    title: "Senior Software Developer",
-    location: "Pune, India",
-    description: "Worked as full-stack developer. My stack includes React, TypeScript, Node.js, Aws, ReactNative , golang , Aws Lambda, Electron.js",
+    title: "FullStack Developer",
+    location: "Chandigarh, India",
+    description:
+      "I worked as a Fullstack-end developer for 1 years. Worked on 3 projects two of them was as fullstack and one was as a backend.",
     icon: React.createElement(CgWorkAlt),
-    date: "2021 - Present",
-    company: 'Tech9'
+    date: "2017 - 2018",
+    company: 'Geek Informatic Pvt. Ltd.'
+  },
+  {
+    title: "Software Intern",
+    location: "Hyderabad, India",
+    description:
+      "In Last Semester of M.C.A ,I had the privilege of collaborating with a dynamic startup where I played a pivotal role in completing a crucial feed system. Leveraging my expertise in full-stack development and my keen problem-solving abilities, I contributed to the design, development, and implementation of this system, ensuring its seamless integration and functionality.",
+    icon: React.createElement(LuGraduationCap),
+    date: "2016 - 2017",
+    company: 'SmartWinnr'
   },
 ] as const;
 
