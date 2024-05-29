@@ -5,6 +5,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import AreenaImg from "@/public/projects/areena.png";
 import suitepeachImg from "@/public/projects/suitepeach.png";
 import { BsLinkedin, BsStackOverflow } from "react-icons/bs";
+import { PiDevToLogoBold } from "react-icons/pi";
 
 export const links = [
   {
@@ -164,6 +165,10 @@ export const contactData = {
     medium: {
       link: "https://medium.com/@ak.akki907",
       icon: React.createElement(FaMediumM)
+    },
+    devTo:{
+      link:"https://dev.to/akki907",
+      icon:React.createElement(PiDevToLogoBold)
     }
   },
   cvLink: 'https://drive.google.com/file/d/1VeEvSB-5h89KLQ2ENpSCShkytSYQT-bP/view?usp=sharing',
