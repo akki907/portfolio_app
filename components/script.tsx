@@ -5,6 +5,7 @@ import { CHATPORT_APP_ID, GTAG } from "@/lib/constants";
 const Scripts = React.memo(() => {
   return (
     <>
+    
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GTAG}`}
         strategy="afterInteractive"
