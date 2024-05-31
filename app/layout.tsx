@@ -12,10 +12,34 @@ const fonts = Mulish({
   display: 'swap',
 })
 
-// export const metadata = {
-//   title: METADATA.title,
-//   description: METADATA.description,
-// };
+export const metadata = {
+  title: {
+    template: "Akash Kumar | %s",
+    default: "Akash Kumar | FullStack Developer",
+  },
+  description:
+    contactData.intro,
+  metadataBase: new URL("https://portfolio-app-akash.vercel.app/"),
+  openGraph: {
+    title: {
+      template: "Akash Kumar | %s",
+      default: "Akash Kumar | FullStack Developer",
+    },
+    description:
+      contactData.intro,
+    url: "https://portfolio-app-akash.vercel.app/",
+    siteName: "Akash Kumar",
+    images: [
+      {
+        url: contactData.imageUrl,
+        width: 1000,
+        height: 1200,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
 
 export default function RootLayout({
   children,
