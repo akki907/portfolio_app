@@ -101,7 +101,7 @@ export const experiencesData: ExperinceType[] = [
 
 export const projectsData = [
   {
-    title: "lashbrook",
+    title: "Lashbrook",
     description:
       "Worked as a front-end developer on this project. E-commerce website for custom jewellery builder.",
     tags: ["React","tailwind","redux"],
