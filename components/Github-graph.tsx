@@ -4,15 +4,20 @@ import React, { useState } from 'react';
 import GitHubCalendar from 'react-github-calendar';
 import { Button } from './ui/button';
 import { contactData } from '@/lib/data';
+import { useSectionInView } from '@/lib/hooks';
 
 const currentYear = new Date().getFullYear();
 
 const contributionYears = Array.from({ length: 5 }, (_, i) => currentYear - i);
 export default function GithubGraphSection() {
+    const { ref } = useSectionInView('Github', 0.5);
     const [year, setYear] = useState(currentYear);
 
     return (
-        <section className={`py-10 w-full card max-w-7xl`}>
+        <section
+            ref={ref}
+            id="github"
+            className={`py-10 w-full card max-w-7xl`}>
             <div className=''>
                 <div className='font-bold capitalize'>
                     <h4>My Github Contributions</h4>
@@ -24,7 +29,7 @@ export default function GithubGraphSection() {
                         {contributionYears.map((singleYear) => (
                             <Button
                                 key={singleYear}
-                                variant={singleYear === year ? 'default':'outline'}
+                                variant={singleYear === year ? 'default' : 'outline'}
                                 onClick={() => setYear(singleYear)}
                             >
                                 {singleYear}

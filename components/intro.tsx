@@ -56,7 +56,10 @@ export default function Intro() {
         <h2 className="text-2xl font-semibold leading-tight text-white  lg:text-3xl">
           Hello <span className="wave">👋</span> I am {contactData.name}
         </h2>
+        <div className="liner-background">
         <Typewriter options={{ strings: ["FullStack Developer", "Front End Developer", "React Js Developer", "Javascript Developer", "Node.js Developer", "Python Developer"], autoStart: true, loop: true, deleteSpeed: 30 }} />
+
+        </div>
       </motion.h1>
 
       <motion.div
