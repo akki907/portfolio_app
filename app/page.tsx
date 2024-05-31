@@ -20,6 +20,7 @@ import Scripts from "@/components/script";
 import BackToTop from "@/components/BackToTop";
 import LoadingScreen from "@/components/LoadingScreen";
 import { domAnimation, LazyMotion } from "framer-motion"
+import GithubGraphSection from "@/components/Github-graph";
 
 export interface IDesktop {
   isDesktop: boolean;
@@ -46,6 +47,7 @@ export default function Home() {
               <Projects />
               <Skills />
               <Experience />
+              <GithubGraphSection />
               <Contact />
               <StarsCanvasBackGround />
               <Scripts />

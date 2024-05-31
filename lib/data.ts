@@ -181,6 +181,7 @@ export const contactData = {
       icon:React.createElement(PiDevToLogoBold)
     }
   },
+  githubUsername: 'akki907',
   cvLink: 'https://drive.google.com/file/d/1VeEvSB-5h89KLQ2ENpSCShkytSYQT-bP/view?usp=sharing',
   intro: "Akash is a full-stack developer with 7 years of experience.",
   imageUrl: "https://media.licdn.com/dms/image/D4D03AQG6bucFi1UBlw/profile-displayphoto-shrink_400_400/0/1707308234897?e=1718841600&v=beta&t=WEywbxDxeth7-wQ9ZuqjjQ7eDxoz2cenJESFmn8m4YM",
