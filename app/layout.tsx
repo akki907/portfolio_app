@@ -1,16 +1,23 @@
 import "./globals.css";
-import {Mulish } from "next/font/google";
+import { Inter, Anek_Bangla, Work_Sans } from "next/font/google";
+import classNames from "classnames";
+
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import ThemeContextProvider from "@/context/theme-context";
-import { METADATA, contactData } from "@/lib/data";
+import { contactData } from "@/lib/data";
 import { Toaster } from "@/components/ui/toaster";
 
-const fonts = Mulish({
-  weight: ['400',],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
-})
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const anekBangla = Anek_Bangla({
+  subsets: ["latin"],
+  variable: "--font-anek-bangla",
+});
+const workSans = Work_Sans({
+  subsets: ["latin"],
+  variable: "--font-work-sans",
+  weight: ["200", "300"],
+});
 
 export const metadata = {
   title: {
@@ -49,7 +56,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${fonts.className} overflow-y-scroll overflow-x-hidden bg-gray-50 text-gray-950 relative   dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
+        className={`${
+          classNames(
+            inter.variable,
+            anekBangla.variable,
+            workSans.variable
+          )
+        } overflow-y-scroll overflow-x-hidden bg-gray-50 text-gray-950 relative   dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
       >
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
