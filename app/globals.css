@@ -543,10 +543,10 @@
 }
 
 .card{
-    background: rgba(255, 255, 255, 0.05);
+    box-shadow: rgba(34, 42, 53, 0.12) 0px 10px 32px, rgba(0, 0, 0, 0.05) 0px 1px 1px, rgba(34, 42, 53, 0.05) 0px 0px 0px 1px, rgba(34, 42, 53, 0.08) 0px 4px 6px, rgba(47, 48, 55, 0.1) 0px 24px 108px;
+    background-image: radial-gradient(88% 100% at top, hsla(0, 0%, 100%, .5), hsla(0, 0%, 100%, 0));
     box-shadow: none;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    border-radius: 20px;
+    border-radius: 10px;
     transition: all 0.3s ease;
     padding: 1rem;
 }
