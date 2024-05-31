@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 
 type LoadingScreenProps = {
@@ -18,8 +18,8 @@ const LoadingScreen = ({ setLoading }: LoadingScreenProps) => {
 
 
     return (
-        <div className="loading-screen  cursor-progress">
-            <div className="centered-image">
+        <div className="flex justify-center h-screen flex-col gap-2 items-center m-auto  cursor-progress">
+            <div className="">
                 <Player
                     autoplay
                     loop
@@ -32,14 +32,14 @@ const LoadingScreen = ({ setLoading }: LoadingScreenProps) => {
                     }}
                 />
             </div>
-            <div className="bottom-right-image">
+            <div className="">
                 <Player
                     autoplay
                     loop
-                    src="/lottie/loadcode.json"
+                    src="/lottie/loader.json"
                     style={{
-                        width: "80px",
-                        height: "80px",
+                        width: "180px",
+                        height: "180px",
                     }}
                 />
             </div>
