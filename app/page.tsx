@@ -9,8 +9,6 @@ import Intro from "@/components/intro";
 import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
-import Preloader from "@/components/Preloader";
-import Header from "@/components/header";
 import StarsCanvasBackGround from "@/components/StarBackground";
 import ProgressIndicator from "@/components/ProgressIndicator";
 import Layout from "@/components/Layout";
@@ -19,14 +17,15 @@ import Head from "next/head";
 import { METADATA } from "@/lib/data";
 import HeaderUpdate from "@/components/HeaderUpdate";
 import Scripts from "@/components/script";
+import BackToTop from "@/components/BackToTop";
+import LoadingScreen from "@/components/LoadingScreen";
+import { domAnimation, LazyMotion } from "framer-motion"
 
 export interface IDesktop {
   isDesktop: boolean;
 }
 export default function Home() {
   const [loading, setLoading] = useState(true);
-
-
   return (
     <>
       <Head>
@@ -34,11 +33,10 @@ export default function Home() {
       </Head>
       <Layout>
         {loading ? (
-          <Preloader setLoading={setLoading} />
+          <LoadingScreen setLoading={setLoading} />
         ) : (
           <main className="flex flex-col items-center px-4  pt-40">
-            <Suspense fallback={<Preloader />}>
-              {/* <FollowerPointerCard title='Akash'> */}
+            <LazyMotion features={domAnimation}>
               <div className="bg-[#946263] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] "></div>
               <HeaderUpdate />
               <ProgressIndicator />
@@ -51,8 +49,9 @@ export default function Home() {
               <Contact />
               <StarsCanvasBackGround />
               <Scripts />
+              {/* <BackToTop /> */}
               <AnimatedCursor />
-            </Suspense>
+            </LazyMotion>
           </main>
         )}
 

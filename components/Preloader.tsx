@@ -16,18 +16,14 @@ const Preloader = ({ setLoading }: any) => {
   }, []);
 
   async function reveal() {
-      await setLoading(false);
+    await setLoading(false);
   }
 
   return (
     <AppContainer>
       <div className="loader">
-   <div data-glitch="Loading..." className="glitch">Loading...</div>
-</div>
-      {/* <div className="loader">
-        <span className="loader-text">loading</span>
-        <span className="load"></span>
-      </div> */}
+        <div data-glitch="Loading..." className="glitch">Loading...</div>
+      </div>
     </AppContainer>
   );
 };
