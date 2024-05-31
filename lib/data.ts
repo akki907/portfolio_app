@@ -4,6 +4,8 @@ import { FaGithubSquare, FaMediumM } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import AreenaImg from "@/public/projects/areena.png";
 import suitepeachImg from "@/public/projects/suitepeach.png";
+import lashbrookImg from "@/public/projects/lashbrook.png";
+
 import { BsLinkedin, BsStackOverflow } from "react-icons/bs";
 import { PiDevToLogoBold } from "react-icons/pi";
 
@@ -98,6 +100,14 @@ export const experiencesData: ExperinceType[] = [
 
 
 export const projectsData = [
+  {
+    title: "lashbrook",
+    description:
+      "Worked as a front-end developer on this project. E-commerce website for custom jewellery builder.",
+    tags: ["React","tailwind","redux"],
+    imageUrl: lashbrookImg,
+    link: "https://www.lashbrookdesigns.com"
+  },
   {
     title: "SuitePeach",
     description:
