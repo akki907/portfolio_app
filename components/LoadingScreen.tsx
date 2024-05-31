@@ -7,7 +7,7 @@ type LoadingScreenProps = {
 };
 
 const LoadingScreen = ({ setLoading }: LoadingScreenProps) => {
-    
+
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false);
@@ -18,7 +18,7 @@ const LoadingScreen = ({ setLoading }: LoadingScreenProps) => {
 
 
     return (
-        <div className="loading-screen">
+        <div className="loading-screen  cursor-progress">
             <div className="centered-image">
                 <Player
                     autoplay
