@@ -1,9 +1,9 @@
 
-import React, { useEffect } from "react";
+import React, { useEffect,Dispatch,SetStateAction } from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 
 type LoadingScreenProps = {
-    setLoading?: any;
+    setLoading: Dispatch<SetStateAction<boolean>>;
 };
 
 const LoadingScreen = ({ setLoading }: LoadingScreenProps) => {

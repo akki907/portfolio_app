@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, Dispatch, SetStateAction } from "react";
 import About from "@/components/about";
 import Contact from "@/components/contact";
 import Experience from "@/components/experience";
@@ -25,7 +25,7 @@ export interface IDesktop {
   isDesktop: boolean;
 }
 export default function Home() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading]: [boolean, Dispatch<SetStateAction<boolean>>] = useState(true);
   return (
     <>
       <Head>
