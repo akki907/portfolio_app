@@ -17,7 +17,6 @@ import Head from "next/head";
 import { METADATA } from "@/lib/data";
 import HeaderUpdate from "@/components/HeaderUpdate";
 import Scripts from "@/components/script";
-import BackToTop from "@/components/BackToTop";
 import LoadingScreen from "@/components/LoadingScreen";
 import { domAnimation, LazyMotion } from "framer-motion"
 import GithubGraphSection from "@/components/Github-graph";
@@ -51,7 +50,6 @@ export default function Home() {
               <Contact />
               <StarsCanvasBackGround />
               <Scripts />
-              {/* <BackToTop /> */}
               <AnimatedCursor />
             </LazyMotion>
           </main>

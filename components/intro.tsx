@@ -53,9 +53,9 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h2 className="text-2xl font-semibold leading-tight text-white  lg:text-3xl">
+        <div className="text-2xl font-semibold leading-tight text-white  lg:text-3xl">
           Hello <span className="wave">👋</span> I am {contactData.name}
-        </h2>
+        </div>
         <div className="liner-background">
         <Typewriter options={{ strings: ["FullStack Developer", "Front End Developer", "React Js Developer", "Javascript Developer", "Node.js Developer", "Python Developer"], autoStart: true, loop: true, deleteSpeed: 30 }} />
 
