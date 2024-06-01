@@ -135,7 +135,7 @@ export default function Contact() {
                   </FormItem>
                 )}
               />
-              <Button disabled={form?.formState?.isSubmitting} type="submit">
+              <Button className="custom-gradiant" disabled={form?.formState?.isSubmitting} type="submit">
                 {form?.formState?.isSubmitting ?
                   <><LuLoader2 className="mr-2 h-4 w-4 animate-spin" />Please wait</> :
                   'Submit'}

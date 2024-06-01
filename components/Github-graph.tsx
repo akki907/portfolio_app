@@ -8,7 +8,7 @@ import { useSectionInView } from '@/lib/hooks';
 
 const currentYear = new Date().getFullYear();
 
-const contributionYears = Array.from({ length: 5 }, (_, i) => currentYear - i);
+const contributionYears = Array.from({ length: 4 }, (_, i) => currentYear - i);
 export default function GithubGraphSection() {
     const { ref } = useSectionInView('Github', 0.5);
     const [year, setYear] = useState(currentYear);

@@ -37,7 +37,7 @@ export default function Home() {
         ) : (
           <main className="flex flex-col items-center px-4  pt-40">
             <LazyMotion features={domAnimation}>
-              <div className="bg-[#946263] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] "></div>
+              {/* <div className="bg-[#946263] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] "></div> */}
               <HeaderUpdate />
               <ProgressIndicator />
               <Intro />

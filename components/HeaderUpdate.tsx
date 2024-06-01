@@ -1,9 +1,8 @@
 
 
-import Image from "next/image";
 import { useState } from "react";
 import Menu from "./menu";
-import { contactData } from "@/lib/data";
+import { RiAngularjsLine } from "react-icons/ri";
 
 const HeaderUpdate = () => {
   const [menuVisible, setmenuVisible] = useState(false);
@@ -12,12 +11,7 @@ const HeaderUpdate = () => {
     <header className="w-full fixed top-0 p-8 select-none z-50 bg-gradient-to-b from-gray-900 to-transparent">
       <div className="flex justify-between section-container">
         <a href="#home" className="link">
-          <Image
-            src="/logo.svg"
-            alt={contactData.name}
-            width={22}
-            height={22}
-          />
+          <RiAngularjsLine size={22} />
         </a>
         <nav className={`outer-menu ${menuVisible ? "menu-visible" : ""}`}>
           <button
