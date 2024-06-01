@@ -32,7 +32,7 @@ export default function Footer() {
           className="group flex flex-col font-mono justify-center items-center  text-gray-400 
     text-sm  space-y-2  "
         >
-          <span className="group-hover:text-AAsecondary sm:text-sm text-xs">
+          <span className="liner-background sm:text-sm text-xs">
             Built by Akash
           </span>
 

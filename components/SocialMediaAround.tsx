@@ -1,13 +1,6 @@
 import React from "react";
 import {  motion } from "framer-motion";
 import { contactData } from "@/lib/data";
-
-// import { motion } from "../../../node_modules/framer-motion/dist/framer-motion";
-// import GithubIcon from "../../Icons/GithubIcon";
-// import LinkedinIcon from "../../Icons/LinkedinIcon";
-// import InstagramIcon from "../../Icons/InstagramIcon";
-// import YoutubeIcon from "../../Icons/YoutubeIcon";
-
 type IconProps = {
     href: string;
     Icon:any;
@@ -23,7 +16,7 @@ const IconClickableWithAnimation = (props:IconProps) => {
       className=""
     >
       <a href={props.href} className="" target={"_blank"} rel="noreferrer">
-        <div className={"w-6 h-6 text-gray-400 hover:text-AAsecondary fill-current hover:cursor-pointer"} >
+        <div className={"w-6 h-6 text-gray-400  hover:text-AAsecondary fill-current hover:cursor-pointer"} >
         {props.Icon}
 
         </div>
@@ -66,7 +59,7 @@ export default function SocialMediaAround(props: { finishedLoading: boolean }) {
             }}
             className=""
           >
-            <a href={`mailto:${contactData.email}`} target={"_blank"} rel="noreferrer">
+            <a className="liner-background" href={`mailto:${contactData.email}`} target={"_blank"} rel="noreferrer">
               <span className=" font-Header tracking-wider text-gray-400 hover:text-AAsecondary hover:cursor-pointer">
                 ak.akki907<span className="text-AAsecondary">@</span>gmail<span className="text-AAsecondary">.</span>com
               </span>

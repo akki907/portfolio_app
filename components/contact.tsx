@@ -95,7 +95,7 @@ export default function Contact() {
 
         <p className="text-gray-700 -mt-6 dark:text-white/80">
           Please contact me directly at{" "}
-          <a className="underline" href={contactData.email}>
+          <a className="liner-background" href={`mailto:${contactData.email}`} target={"_blank"} rel="noreferrer">
             {contactData.email}
           </a>{" "}
           or through this form.
