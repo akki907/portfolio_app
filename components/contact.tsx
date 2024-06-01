@@ -66,7 +66,7 @@ export default function Contact() {
 
   return (
     <div
-      className={`flex xl:flex-row flex-col gap-4 overflow-hidden justify-between `}
+      className={`flex xl:flex-row flex-col gap-4 overflow-hidden justify-between  pt-12 `}
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
