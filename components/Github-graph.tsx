@@ -17,7 +17,7 @@ export default function GithubGraphSection() {
         <section
             ref={ref}
             id="github"
-            className={`py-10 w-full card max-w-7xl`}>
+            className={`py-16 w-full card max-w-5xl`}>
             <div className=''>
                 <div className='font-bold capitalize'>
                     <h4>My Github Contributions</h4>

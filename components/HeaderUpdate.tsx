@@ -2,17 +2,20 @@
 
 import { useState } from "react";
 import Menu from "./menu";
-import { RiAngularjsLine } from "react-icons/ri";
+import Logo from "./LogoAkash";
 
 const HeaderUpdate = () => {
   const [menuVisible, setmenuVisible] = useState(false);
 
   return (
     <header className="w-full fixed top-0 p-8 select-none z-50 bg-gradient-to-b from-gray-900 to-transparent">
+
       <div className="flex justify-between section-container">
+
         <a href="#home" className="link">
-          <RiAngularjsLine size={22} />
+          <Logo />
         </a>
+
         <nav className={`outer-menu ${menuVisible ? "menu-visible" : ""}`}>
           <button
             className="hamburger w-6 h-6 flex items-center justify-center link relative"

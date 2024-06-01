@@ -12,20 +12,26 @@ import Skills from "@/components/skills";
 import StarsCanvasBackGround from "@/components/StarBackground";
 import ProgressIndicator from "@/components/ProgressIndicator";
 import Layout from "@/components/Layout";
-import AnimatedCursor from "@/components/CustomCursor";
+// import AnimatedCursor from "@/components/CustomCursor";
 import Head from "next/head";
 import { METADATA } from "@/lib/data";
 import HeaderUpdate from "@/components/HeaderUpdate";
 import Scripts from "@/components/script";
-import LoadingScreen from "@/components/LoadingScreen";
+// import LoadingScreen from "@/components/LoadingScreen";
 import { domAnimation, LazyMotion } from "framer-motion"
 import GithubGraphSection from "@/components/Github-graph";
+import Footer from "@/components/footer";
+import Startup from "@/components/Starup";
+import SocialMediaAround from "@/components/SocialMediaAround";
 
 export interface IDesktop {
   isDesktop: boolean;
 }
 export default function Home() {
   const [loading, setLoading]: [boolean, Dispatch<SetStateAction<boolean>>] = useState(true);
+
+  const isProd = process.env.NODE_ENV === "production";
+
   return (
     <>
       <Head>
@@ -33,11 +39,12 @@ export default function Home() {
       </Head>
       <Layout>
         {loading ? (
-          <LoadingScreen setLoading={setLoading} />
+          <div className="relative snap-mandatory min-h-screen bg-AAprimary w-full ">
+            <Startup setLoading={setLoading} />
+          </div>
         ) : (
           <main className="flex flex-col items-center px-4  pt-40">
             <LazyMotion features={domAnimation}>
-              {/* <div className="bg-[#946263] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] "></div> */}
               <HeaderUpdate />
               <ProgressIndicator />
               <Intro />
@@ -48,9 +55,10 @@ export default function Home() {
               <Experience />
               <GithubGraphSection />
               <Contact />
+              <SocialMediaAround finishedLoading={loading} />
+              <Footer  />
               <StarsCanvasBackGround />
               <Scripts />
-              <AnimatedCursor />
             </LazyMotion>
           </main>
         )}

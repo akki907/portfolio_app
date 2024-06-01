@@ -19,7 +19,7 @@ const Scripts = React.memo(() => {
             gtag('config', '${GTAG}');
         `}
       </Script>
-      <Script strategy="lazyOnload" id="chaport-config">
+      {/* <Script strategy="lazyOnload" id="chaport-config">
         {`
             setTimeout(() => {
                 (function (w, d, v3) {
@@ -31,7 +31,7 @@ const Scripts = React.memo(() => {
                 })(window, document);
             }, 2000);
         `}
-      </Script>
+      </Script> */}
     </>
   );
 });

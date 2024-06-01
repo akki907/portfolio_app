@@ -91,20 +91,7 @@ export default function Intro() {
           Download CV{" "}
           <HiDownload className="group-hover:translate-y-1 transition" />
         </a>
-        <div className="flex gap-2 align-middle ">
-
-          {Object.values(contactData.socialMedia).map((i, index) => (
-            <Button
-              key={i.link}
-              className="bg-white group-hover:translate-y-1  opacity-60  p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-              onClick={() => {
-                window.open(i.link, "_blank");
-              }}
-            >
-              {i.icon}
-            </Button>
-          ))}
-        </div>
+    
 
 
       </motion.div>

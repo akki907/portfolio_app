@@ -1,6 +1,8 @@
 import type { Config, } from "tailwindcss"
 
 const colors = require("tailwindcss/colors");
+const svgToDataUri = require("mini-svg-data-uri");
+
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
@@ -36,6 +38,13 @@ const config = {
     },
     extend: {
       colors: {
+        AAprimary: "#0b192f",
+        AAsecondary: "#64ffda",
+        AAError: "#ff6489",
+        AAtertiary: "#112340",
+        ResumeButtonHover: "#153040",
+        MobileNavBarColor: "#112340",
+        StartupBackground: "#020c1b",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -91,7 +100,20 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"),addVariablesForColors],
+  plugins: [require("tailwindcss-animate"),addVariablesForColors,
+  function ({ matchUtilities, theme }: any) {
+    matchUtilities(
+      {
+        "bg-dot-thick": (value: any) => ({
+          backgroundImage: `url("${svgToDataUri(
+            `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="2.5"></circle></svg>`
+          )}")`,
+        }),
+      },
+      { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
+    );
+  },
+  ],
 } satisfies Config
 
 export default config

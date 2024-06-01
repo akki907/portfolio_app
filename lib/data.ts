@@ -161,6 +161,7 @@ export const contactData = {
   email: "ak.akki907@gmail.com",
   phone_no: "7598608395",
   name: "Akash Kumar",
+  projectLink: "https://github.com/akki907/portfolio_app",
   typewriterOptions: { strings: ["FullStack Developer", "Front End Developer", "React Js Developer", "Javascript Developer", "Node.js Developer", "Python Developer"], autoStart: true, loop: true, deleteSpeed: 30 },
   socialMedia: {
     linkedin: {
