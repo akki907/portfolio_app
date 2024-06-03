@@ -8,7 +8,7 @@ const Startup = ({ setLoading }: LoadingScreenProps) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 4800);
 
     return () => clearTimeout(timer);
   }, []);
