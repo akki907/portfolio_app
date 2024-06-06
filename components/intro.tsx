@@ -39,8 +39,8 @@ export default function Intro() {
                 alt={contactData.name}
                 width="250"
                 height="250"
+                loading="lazy"
                 quality="100"
-                priority={true}
                 className="h-35 w-35 rounded-full object-cover border-[0.35rem] border-white shadow-xl z-[5] w-full h-full transition-all duration-400 fancy-image"
               />
             )}
