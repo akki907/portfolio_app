@@ -31,18 +31,21 @@ export default function Intro() {
               type: "tween",
               duration: 0.2,
             }}
-            className="w-80 h-80 overflow-hidden relative"
+            className="w-80 h-80 overflow-hidden relative flex items-center justify-center"
           >
             {contactData.imageUrl && (
-              <Image
-                src={contactData.imageUrl}
-                alt={contactData.name}
-                width="250"
-                height="250"
-                loading="lazy"
-                quality="100"
-                className="h-35 w-35 rounded-full object-cover border-[0.35rem] border-white shadow-xl z-[5] w-full h-full transition-all duration-400 fancy-image"
-              />
+              <div className="instagram-loader">
+                <Image
+                  src={contactData.imageUrl}
+                  alt={contactData.name}
+                  width="250"
+                  height="250"
+                  loading="lazy"
+                  quality="100"
+                  className="h-35 w-35 rounded-full object-cover  shadow-xl z-[5] w-full h-full transition-all duration-400 "
+                />
+              </div>
+
             )}
           </motion.div>
         </div>
@@ -57,7 +60,7 @@ export default function Intro() {
           Hello <span className="wave">👋</span> I am {contactData.name}
         </div>
         <div className="liner-background">
-        <Typewriter options={{ strings: ["FullStack Developer", "Front End Developer", "React Js Developer", "Javascript Developer", "Node.js Developer", "Python Developer"], autoStart: true, loop: true, deleteSpeed: 30 }} />
+          <Typewriter options={{ strings: ["FullStack Developer", "Front End Developer", "React Js Developer", "Javascript Developer", "Node.js Developer", "Python Developer"], autoStart: true, loop: true, deleteSpeed: 30 }} />
 
         </div>
       </motion.h1>
@@ -91,7 +94,7 @@ export default function Intro() {
           Resume
           <HiDownload className="group-hover:translate-y-1 transition" />
         </a>
-    
+
 
 
       </motion.div>

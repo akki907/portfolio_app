@@ -30,7 +30,7 @@ export interface IDesktop {
 export default function Home() {
   const [loading, setLoading]: [boolean, Dispatch<SetStateAction<boolean>>] = useState(true);
 
-  const isProd = process.env.NODE_ENV === "production";
+
 
   return (
     <>

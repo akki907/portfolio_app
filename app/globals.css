@@ -396,9 +396,9 @@
 }
 
 .fancy-image {
-  background: linear-gradient(to right, #3c1053, #ad5389);
+  /* background: linear-gradient(to right, #3c1053, #ad5389); */
   animation: border-radius-animation 8s infinite;
-  padding: 0.5rem;
+  padding: 1px;
 }
 
 @keyframes border-radius-animation {
@@ -608,4 +608,52 @@
 .custom-gradiant{
   background: linear-gradient(90deg, #2193b0, #6dd5ed 50%, #2193b0), linear-gradient(0deg, #fff, #fff);
   background-size: 200% 100%;
+}
+
+
+
+.instagram-loader {
+  width: 250px;  /* Adjust based on your image size */
+  height: 250px; /* Adjust based on your image size */
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.instagram-loader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid;
+  border-color: #2193b0;
+  animation: spin 3s linear infinite;
+}
+
+.instagram-loader img {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+
+.instagram-loader::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  border-radius: 50%;
+  z-index: 3;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
