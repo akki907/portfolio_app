@@ -9,7 +9,8 @@
     "format:write": "prettier . --write",
     "format:check": "prettier .  --check",
     "lint": "next lint --fix",
-    "prepare": "husky"
+    "test": "prettier . --write",
+    "prepare": "husky && husky install"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -67,7 +68,7 @@
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-tailwindcss": "^3.17.5",
     "globals": "^15.11.0",
-    "husky": "^9.1.6",
+    "husky": "^8.0.0",
     "lint-staged": "^15.2.10",
     "postcss": "^8",
     "prettier": "^3.3.3",
@@ -76,13 +77,11 @@
     "typescript-eslint": "^8.11.0"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
+    "*.{js, jsx,ts,tsx}": [
+      "eslint --quiet --fix"
+    ],
+    "*.{json,js,ts,jsx,tsx,html}": [
+      "prettier --write --ignore-unknown"
     ]
   }
 }
