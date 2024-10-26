@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 
-import classNames from "classnames";
+import classNames from 'classnames';
 
 export default function Hamburger() {
   const [active, setActive] = useState(true);
@@ -12,36 +12,36 @@ export default function Hamburger() {
   };
 
   return (
-    <div className="no-rounded-cursor z-20 absolute right-0 top-0 z-10 shrink-0 opacity-100 duration-75 sm:opacity-0 group-[.scrolling]:sm:z-50 group-[.scrolling]:sm:opacity-100 group-[.scrolling]:sm:delay-300 group-[.scrolling]:sm:duration-300">
+    <div className='no-rounded-cursor z-20 absolute right-0 top-0 z-10 shrink-0 opacity-100 duration-75 sm:opacity-0 group-[.scrolling]:sm:z-50 group-[.scrolling]:sm:opacity-100 group-[.scrolling]:sm:delay-300 group-[.scrolling]:sm:duration-300'>
       <button
-        className="relative"
+        className='relative'
         tabIndex={0}
         onClick={() => toggleHamburger(!active)}
         onBlur={() => toggleHamburger(false)}
       >
         <div
           className={classNames(
-            "relative flex h-[50px] w-[50px] transform items-center justify-center rounded-full bg-slate-200 shadow-md ring-0 ring-gray-300 ring-opacity-30 transition-all duration-200 hover:ring-8",
-            { "ring-4": active },
+            'relative flex h-[50px] w-[50px] transform items-center justify-center rounded-full bg-slate-200 shadow-md ring-0 ring-gray-300 ring-opacity-30 transition-all duration-200 hover:ring-8',
+            { 'ring-4': active }
           )}
         >
           <div
             className={classNames(
-              "flex h-[20px] w-[20px] origin-center transform flex-col justify-between transition-all duration-300",
-              { "-rotate-[45deg]": active },
+              'flex h-[20px] w-[20px] origin-center transform flex-col justify-between transition-all duration-300',
+              { '-rotate-[45deg]': active }
             )}
           >
             <div
               className={classNames(
-                "h-[2px] w-1/2 origin-right transform rounded bg-raisin-black transition-all delay-75 duration-300",
-                { "h-[1px] -translate-y-[1px] -rotate-90": active },
+                'h-[2px] w-1/2 origin-right transform rounded bg-raisin-black transition-all delay-75 duration-300',
+                { 'h-[1px] -translate-y-[1px] -rotate-90': active }
               )}
             ></div>
-            <div className="h-[1px] rounded bg-raisin-black"></div>
+            <div className='h-[1px] rounded bg-raisin-black'></div>
             <div
               className={classNames(
-                "h-[2px] w-1/2 origin-left transform self-end rounded bg-raisin-black transition-all delay-75 duration-300 ",
-                { "h-[1px] translate-y-[1px] -rotate-90": active },
+                'h-[2px] w-1/2 origin-left transform self-end rounded bg-raisin-black transition-all delay-75 duration-300 ',
+                { 'h-[1px] translate-y-[1px] -rotate-90': active }
               )}
             ></div>
           </div>

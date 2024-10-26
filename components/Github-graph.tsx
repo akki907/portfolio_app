@@ -1,34 +1,34 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import GitHubCalendar from "react-github-calendar";
+import GitHubCalendar from 'react-github-calendar';
 
-import { contactData } from "@/lib/data";
-import { useSectionInView } from "@/lib/hooks";
+import { contactData } from '@/lib/data';
+import { useSectionInView } from '@/lib/hooks';
 
-import { Button } from "./ui/button";
+import { Button } from './ui/button';
 
 const currentYear = new Date().getFullYear();
 
 const contributionYears = Array.from({ length: 4 }, (_, i) => currentYear - i);
 export default function GithubGraphSection() {
-  const { ref } = useSectionInView("Github", 0.5);
+  const { ref } = useSectionInView('Github', 0.5);
   const [year, setYear] = useState(currentYear);
 
   return (
-    <section ref={ref} id="github" className={`py-16 w-full card max-w-5xl`}>
-      <div className="">
-        <div className="font-bold capitalize">
+    <section ref={ref} id='github' className={`py-16 w-full card max-w-5xl`}>
+      <div className=''>
+        <div className='font-bold capitalize'>
           <h4>My Github Contributions</h4>
         </div>
 
-        <div className="space-y-6 pb-2 pt-100 md:space-y-4">
-          <div className="mt-3 flex flex-wrap gap-3 text-md leading-7">
+        <div className='space-y-6 pb-2 pt-100 md:space-y-4'>
+          <div className='mt-3 flex flex-wrap gap-3 text-md leading-7'>
             {contributionYears.map((singleYear) => (
               <Button
                 key={singleYear}
-                variant={singleYear === year ? "default" : "outline"}
+                variant={singleYear === year ? 'default' : 'outline'}
                 onClick={() => setYear(singleYear)}
               >
                 {singleYear}
@@ -43,7 +43,7 @@ export default function GithubGraphSection() {
               key={`${year}-calendar`}
               username={contactData.githubUsername}
               year={year}
-              colorScheme="dark"
+              colorScheme='dark'
             />
           </div>
         </div>

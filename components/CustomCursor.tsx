@@ -1,38 +1,31 @@
-import {
-  CSSProperties,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import {
   AnimatedCursorCoordinates,
   AnimatedCursorOptions,
   AnimatedCursorProps,
-  Clickable,
-} from "@/lib/types";
-import findInArray from "@/lib/utils";
-import { useEventListener } from "@/hooks/useEventListener";
-import useIsTouchdevice from "@/hooks/useIsTouchdevice";
+  Clickable
+} from '@/lib/types';
+import findInArray from '@/lib/utils';
+import { useEventListener } from '@/hooks/useEventListener';
+import useIsTouchdevice from '@/hooks/useIsTouchdevice';
 
 function CursorCore({
   clickables = [
-    "a",
+    'a',
     'input[type="text"]',
     'input[type="email"]',
     'input[type="number"]',
     'input[type="submit"]',
     'input[type="image"]',
-    "label[for]",
-    "select",
-    "textarea",
-    "button",
-    ".link",
+    'label[for]',
+    'select',
+    'textarea',
+    'button',
+    '.link'
   ],
   children,
-  color = "220, 90, 90",
+  color = '220, 90, 90',
   innerScale = 0.6,
   innerSize = 8,
   innerStyle,
@@ -41,7 +34,7 @@ function CursorCore({
   outerSize = 8,
   outerStyle,
   showSystemCursor = false,
-  trailingSpeed = 8,
+  trailingSpeed = 8
 }: AnimatedCursorProps) {
   const defaultOptions = useMemo(
     () => ({
@@ -53,7 +46,7 @@ function CursorCore({
       outerAlpha,
       outerScale,
       outerSize,
-      outerStyle,
+      outerStyle
     }),
     [
       children,
@@ -64,8 +57,8 @@ function CursorCore({
       outerAlpha,
       outerScale,
       outerSize,
-      outerStyle,
-    ],
+      outerStyle
+    ]
   );
 
   const cursorOuterRef = useRef<HTMLDivElement>(null);
@@ -74,13 +67,11 @@ function CursorCore({
   const previousTimeRef = useRef<number | null>(null);
   const [coords, setCoords] = useState<AnimatedCursorCoordinates>({
     x: 0,
-    y: 0,
+    y: 0
   });
   const [isVisible, setIsVisible] = useState(false);
   const [options, setOptions] = useState(defaultOptions);
-  const [isActive, setIsActive] = useState<boolean | AnimatedCursorOptions>(
-    false,
-  );
+  const [isActive, setIsActive] = useState<boolean | AnimatedCursorOptions>(false);
   const [isActiveClickable, setIsActiveClickable] = useState(false);
   const endX = useRef(0);
   const endY = useRef(0);
@@ -115,7 +106,7 @@ function CursorCore({
       previousTimeRef.current = time;
       requestRef.current = requestAnimationFrame(animateOuterCursor);
     },
-    [requestRef], // eslint-disable-line
+    [requestRef] // eslint-disable-line
   );
 
   // Outer cursor RAF setup / cleanup
@@ -140,17 +131,13 @@ function CursorCore({
 
   // Scales cursor by HxW
   const scaleBySize = useCallback(
-    (
-      cursorRef: HTMLDivElement | null,
-      orignalSize: number,
-      scaleAmount: number,
-    ) => {
+    (cursorRef: HTMLDivElement | null, orignalSize: number, scaleAmount: number) => {
       if (cursorRef) {
         cursorRef.style.height = getScaleAmount(orignalSize, scaleAmount);
         cursorRef.style.width = getScaleAmount(orignalSize, scaleAmount);
       }
     },
-    [],
+    []
   );
 
   // Mouse Events State updates
@@ -159,25 +146,17 @@ function CursorCore({
   const onMouseEnterViewport = useCallback(() => setIsVisible(true), []);
   const onMouseLeaveViewport = useCallback(() => setIsVisible(false), []);
 
-  useEventListener("mousemove", onMouseMove);
-  useEventListener("mousedown", onMouseDown);
-  useEventListener("mouseup", onMouseUp);
-  useEventListener("mouseover", onMouseEnterViewport);
-  useEventListener("mouseout", onMouseLeaveViewport);
+  useEventListener('mousemove', onMouseMove);
+  useEventListener('mousedown', onMouseDown);
+  useEventListener('mouseup', onMouseUp);
+  useEventListener('mouseover', onMouseEnterViewport);
+  useEventListener('mouseout', onMouseLeaveViewport);
 
   // Cursors Hover/Active State
   useEffect(() => {
     if (isActive) {
-      scaleBySize(
-        cursorInnerRef.current,
-        options.innerSize,
-        options.innerScale,
-      );
-      scaleBySize(
-        cursorOuterRef.current,
-        options.outerSize,
-        options.outerScale,
-      );
+      scaleBySize(cursorInnerRef.current, options.innerSize, options.innerScale);
+      scaleBySize(cursorOuterRef.current, options.outerSize, options.outerScale);
     } else {
       scaleBySize(cursorInnerRef.current, options.innerSize, 1);
       scaleBySize(cursorOuterRef.current, options.outerSize, 1);
@@ -188,22 +167,14 @@ function CursorCore({
     options.outerSize,
     options.outerScale,
     scaleBySize,
-    isActive,
+    isActive
   ]);
 
   // Cursors Click States
   useEffect(() => {
     if (isActiveClickable) {
-      scaleBySize(
-        cursorInnerRef.current,
-        options.innerSize,
-        options.innerScale * 1.2,
-      );
-      scaleBySize(
-        cursorOuterRef.current,
-        options.outerSize,
-        options.outerScale * 1.4,
-      );
+      scaleBySize(cursorInnerRef.current, options.innerSize, options.innerScale * 1.2);
+      scaleBySize(cursorOuterRef.current, options.outerSize, options.outerScale * 1.4);
     }
   }, [
     options.innerSize,
@@ -211,20 +182,19 @@ function CursorCore({
     options.outerSize,
     options.outerScale,
     scaleBySize,
-    isActiveClickable,
+    isActiveClickable
   ]);
 
   // Cursor Visibility Statea
   useEffect(() => {
-    if (cursorInnerRef.current == null || cursorOuterRef.current == null)
-      return;
+    if (cursorInnerRef.current == null || cursorOuterRef.current == null) return;
 
     if (isVisible) {
-      cursorInnerRef.current.style.opacity = "1";
-      cursorOuterRef.current.style.opacity = "1";
+      cursorInnerRef.current.style.opacity = '1';
+      cursorOuterRef.current.style.opacity = '1';
     } else {
-      cursorInnerRef.current.style.opacity = "0";
-      cursorOuterRef.current.style.opacity = "0";
+      cursorInnerRef.current.style.opacity = '0';
+      cursorOuterRef.current.style.opacity = '0';
     }
   }, [isVisible]);
 
@@ -233,45 +203,43 @@ function CursorCore({
     const clickableEls = document.querySelectorAll<HTMLElement>(
       clickables
         .map((clickable) =>
-          typeof clickable === "object" && clickable?.target
-            ? clickable.target
-            : (clickable ?? ""),
+          typeof clickable === 'object' && clickable?.target ? clickable.target : (clickable ?? '')
         )
-        .join(","),
+        .join(',')
     );
 
     clickableEls.forEach((el) => {
-      if (!showSystemCursor) el.style.cursor = "none";
+      if (!showSystemCursor) el.style.cursor = 'none';
 
       const clickableOptions =
-        typeof clickables === "object"
+        typeof clickables === 'object'
           ? findInArray(
               clickables,
               (clickable: Clickable) =>
-                typeof clickable === "object" && el.matches(clickable.target),
+                typeof clickable === 'object' && el.matches(clickable.target)
             )
           : {};
 
       const options = {
         ...defaultOptions,
-        ...clickableOptions,
+        ...clickableOptions
       };
 
-      el.addEventListener("mouseover", () => {
+      el.addEventListener('mouseover', () => {
         setIsActive(true);
         setOptions(options);
       });
-      el.addEventListener("click", () => {
+      el.addEventListener('click', () => {
         setIsActive(true);
         setIsActiveClickable(false);
       });
-      el.addEventListener("mousedown", () => {
+      el.addEventListener('mousedown', () => {
         setIsActiveClickable(true);
       });
-      el.addEventListener("mouseup", () => {
+      el.addEventListener('mouseup', () => {
         setIsActive(true);
       });
-      el.addEventListener("mouseout", () => {
+      el.addEventListener('mouseout', () => {
         setIsActive(false);
         setIsActiveClickable(false);
         setOptions(defaultOptions);
@@ -281,34 +249,34 @@ function CursorCore({
     return () => {
       clickableEls.forEach((el) => {
         const clickableOptions =
-          typeof clickables === "object"
+          typeof clickables === 'object'
             ? findInArray(
                 clickables,
                 (clickable: Clickable) =>
-                  typeof clickable === "object" && el.matches(clickable.target),
+                  typeof clickable === 'object' && el.matches(clickable.target)
               )
             : {};
 
         const options = {
           ...defaultOptions,
-          ...clickableOptions,
+          ...clickableOptions
         };
 
-        el.removeEventListener("mouseover", () => {
+        el.removeEventListener('mouseover', () => {
           setIsActive(true);
           setOptions(options);
         });
-        el.removeEventListener("click", () => {
+        el.removeEventListener('click', () => {
           setIsActive(true);
           setIsActiveClickable(false);
         });
-        el.removeEventListener("mousedown", () => {
+        el.removeEventListener('mousedown', () => {
           setIsActiveClickable(true);
         });
-        el.removeEventListener("mouseup", () => {
+        el.removeEventListener('mouseup', () => {
           setIsActive(true);
         });
-        el.removeEventListener("mouseout", () => {
+        el.removeEventListener('mouseout', () => {
           setIsActive(false);
           setIsActiveClickable(false);
           setOptions(defaultOptions);
@@ -318,42 +286,39 @@ function CursorCore({
   }, [isActive, clickables, showSystemCursor, defaultOptions]);
 
   useEffect(() => {
-    if (typeof window === "object" && !showSystemCursor) {
-      document.body.style.cursor = "none";
+    if (typeof window === 'object' && !showSystemCursor) {
+      document.body.style.cursor = 'none';
     }
   }, [showSystemCursor]);
 
   const coreStyles: CSSProperties = {
     zIndex: 999,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    position: "fixed",
-    borderRadius: "50%",
-    pointerEvents: "none",
-    transform: "translate(-50%, -50%)",
-    transition:
-      "opacity 0.15s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'fixed',
+    borderRadius: '50%',
+    pointerEvents: 'none',
+    transform: 'translate(-50%, -50%)',
+    transition: 'opacity 0.15s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out'
   };
 
   // Cursor Styles
   const styles = {
     cursorInner: {
-      width: !options.children ? options.innerSize : "auto",
-      height: !options.children ? options.innerSize : "auto",
-      backgroundColor: !options.children
-        ? `rgba(${options.color}, 1)`
-        : "transparent",
+      width: !options.children ? options.innerSize : 'auto',
+      height: !options.children ? options.innerSize : 'auto',
+      backgroundColor: !options.children ? `rgba(${options.color}, 1)` : 'transparent',
       ...coreStyles,
-      ...(options.innerStyle && options.innerStyle),
+      ...(options.innerStyle && options.innerStyle)
     },
     cursorOuter: {
       width: options.outerSize,
       height: options.outerSize,
       backgroundColor: `rgba(${options.color}, ${options.outerAlpha})`,
       ...coreStyles,
-      ...(options.outerStyle && options.outerStyle),
-    },
+      ...(options.outerStyle && options.outerStyle)
+    }
   };
 
   return (
@@ -363,7 +328,7 @@ function CursorCore({
         <div
           style={{
             opacity: !options.children ? 0 : 1,
-            transition: "opacity 0.3s ease-in-out",
+            transition: 'opacity 0.3s ease-in-out'
           }}
         >
           {options.children}
@@ -389,10 +354,10 @@ function AnimatedCursor({
   outerSize,
   outerStyle,
   showSystemCursor,
-  trailingSpeed,
+  trailingSpeed
 }: AnimatedCursorProps) {
   const isTouchdevice = useIsTouchdevice();
-  if (typeof window !== "undefined" && isTouchdevice) {
+  if (typeof window !== 'undefined' && isTouchdevice) {
     return <></>;
   }
   return (

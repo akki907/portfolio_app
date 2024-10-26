@@ -1,6 +1,6 @@
-import React, { Dispatch, SetStateAction, useEffect } from "react";
+import React, { Dispatch, SetStateAction, useEffect } from 'react';
 
-import { Player } from "@lottiefiles/react-lottie-player";
+import { Player } from '@lottiefiles/react-lottie-player';
 
 type LoadingScreenProps = {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -16,26 +16,26 @@ const LoadingScreen = ({ setLoading }: LoadingScreenProps) => {
   }, []);
 
   return (
-    <div className="flex justify-center h-screen flex-col gap-2 items-center m-auto  cursor-progress">
+    <div className='flex justify-center h-screen flex-col gap-2 items-center m-auto  cursor-progress'>
       <Player
         autoplay
         loop
-        src="/lottie/laptop.json"
+        src='/lottie/laptop.json'
         style={{
-          width: "80%",
-          height: "80%",
-          maxWidth: "800px",
-          maxHeight: "800px",
+          width: '80%',
+          height: '80%',
+          maxWidth: '800px',
+          maxHeight: '800px'
         }}
       />
 
       <Player
         autoplay
         loop
-        src="/lottie/loader.json"
+        src='/lottie/loader.json'
         style={{
-          width: "180px",
-          height: "180px",
+          width: '180px',
+          height: '180px'
         }}
       />
     </div>

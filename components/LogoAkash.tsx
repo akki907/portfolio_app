@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-import { contactData } from "@/lib/data";
-import { getInitial } from "@/lib/utils";
+import { contactData } from '@/lib/data';
+import { getInitial } from '@/lib/utils';
 
 export default function Logo() {
   return (
@@ -12,40 +12,40 @@ export default function Logo() {
         initial={{ y: 0, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
-          type: "spring",
+          type: 'spring'
         }}
-        className=" relative h-12 w-10 "
+        className=' relative h-12 w-10 '
       >
         <motion.span
           initial={{ x: 1 }}
-          className="absolute h-full w-full flex justify-center items-center text-lg font-Header text-AAsecondary"
+          className='absolute h-full w-full flex justify-center items-center text-lg font-Header text-AAsecondary'
         >
           {getInitial(contactData.name)}
         </motion.span>
 
         <motion.div
           animate={{ rotate: -30, y: 5 }}
-          className="h-1 w-6 rounded bg-AAsecondary"
+          className='h-1 w-6 rounded bg-AAsecondary'
         ></motion.div>
         <motion.div
           animate={{ rotate: 90, x: -10, y: 18 }}
-          className="h-1 w-6 rounded bg-AAsecondary"
+          className='h-1 w-6 rounded bg-AAsecondary'
         ></motion.div>
         <motion.div
           animate={{ rotate: 30, y: 31 }}
-          className="h-1 w-6 rounded bg-AAsecondary"
+          className='h-1 w-6 rounded bg-AAsecondary'
         ></motion.div>
         <motion.div
           animate={{ rotate: -30, y: 27, x: 19 }}
-          className="h-1 w-6 rounded bg-AAsecondary"
+          className='h-1 w-6 rounded bg-AAsecondary'
         ></motion.div>
         <motion.div
           animate={{ rotate: 30, x: 19, y: -10 }}
-          className="h-1 w-6 rounded bg-AAsecondary"
+          className='h-1 w-6 rounded bg-AAsecondary'
         ></motion.div>
         <motion.div
           animate={{ rotate: 90, x: 28, y: 2 }}
-          className="h-1 w-6 rounded bg-AAsecondary"
+          className='h-1 w-6 rounded bg-AAsecondary'
         ></motion.div>
       </motion.div>
     </>

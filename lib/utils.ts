@@ -1,15 +1,12 @@
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { clsx, type ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const validateString = (
-  value: unknown,
-  maxLength: number,
-): value is string => {
-  if (!value || typeof value !== "string" || value.length > maxLength) {
+export const validateString = (value: unknown, maxLength: number): value is string => {
+  if (!value || typeof value !== 'string' || value.length > maxLength) {
     return false;
   }
 
@@ -21,12 +18,12 @@ export const getErrorMessage = (error: unknown): string => {
 
   if (error instanceof Error) {
     message = error.message;
-  } else if (error && typeof error === "object" && "message" in error) {
+  } else if (error && typeof error === 'object' && 'message' in error) {
     message = String(error.message);
-  } else if (typeof error === "string") {
+  } else if (typeof error === 'string') {
     message = error;
   } else {
-    message = "Something went wrong";
+    message = 'Something went wrong';
   }
 
   return message;
@@ -36,31 +33,26 @@ export const textVariant = (delay: number) => {
   return {
     hidden: {
       y: -50,
-      opacity: 0,
+      opacity: 0
     },
     show: {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: 'spring',
         duration: 1.25,
-        delay: delay,
-      },
-    },
+        delay: delay
+      }
+    }
   };
 };
 
-export const fadeIn = (
-  direction: any,
-  type: string,
-  delay: any,
-  duration: any,
-) => {
+export const fadeIn = (direction: any, type: string, delay: any, duration: any) => {
   return {
     hidden: {
-      x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
-      y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
-      opacity: 0,
+      x: direction === 'left' ? 100 : direction === 'right' ? -100 : 0,
+      y: direction === 'up' ? 100 : direction === 'down' ? -100 : 0,
+      opacity: 0
     },
     show: {
       x: 0,
@@ -70,9 +62,9 @@ export const fadeIn = (
         type: type,
         delay: delay,
         duration: duration,
-        ease: "easeOut",
-      },
-    },
+        ease: 'easeOut'
+      }
+    }
   };
 };
 
@@ -80,31 +72,26 @@ export const zoomIn = (delay: any, duration: any) => {
   return {
     hidden: {
       scale: 0,
-      opacity: 0,
+      opacity: 0
     },
     show: {
       scale: 1,
       opacity: 1,
       transition: {
-        type: "tween",
+        type: 'tween',
         delay: delay,
         duration: duration,
-        ease: "easeOut",
-      },
-    },
+        ease: 'easeOut'
+      }
+    }
   };
 };
 
-export const slideIn = (
-  direction: any,
-  type: any,
-  delay: any,
-  duration: any,
-) => {
+export const slideIn = (direction: any, type: any, delay: any, duration: any) => {
   return {
     hidden: {
-      x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
-      y: direction === "up" ? "100%" : direction === "down" ? "100%" : 0,
+      x: direction === 'left' ? '-100%' : direction === 'right' ? '100%' : 0,
+      y: direction === 'up' ? '100%' : direction === 'down' ? '100%' : 0
     },
     show: {
       x: 0,
@@ -113,9 +100,9 @@ export const slideIn = (
         type: type,
         delay: delay,
         duration: duration,
-        ease: "easeOut",
-      },
-    },
+        ease: 'easeOut'
+      }
+    }
   };
 };
 
@@ -125,9 +112,9 @@ export const staggerContainer = (staggerChildren: any, delayChildren: any) => {
     show: {
       transition: {
         staggerChildren: staggerChildren,
-        delayChildren: delayChildren || 0,
-      },
-    },
+        delayChildren: delayChildren || 0
+      }
+    }
   };
 };
 
@@ -139,9 +126,9 @@ export function slideInFromLeft(delay: number) {
       opacity: 1,
       transition: {
         delay: delay,
-        duration: 0.5,
-      },
-    },
+        duration: 0.5
+      }
+    }
   };
 }
 
@@ -153,9 +140,9 @@ export function slideInFromRight(delay: number) {
       opacity: 1,
       transition: {
         delay: delay,
-        duration: 0.5,
-      },
-    },
+        duration: 0.5
+      }
+    }
   };
 }
 
@@ -166,9 +153,9 @@ export const slideInFromTop = {
     opacity: 1,
     transition: {
       delay: 0.5,
-      duration: 0.5,
-    },
-  },
+      duration: 0.5
+    }
+  }
 };
 
 export default function findInArray<T>(
@@ -176,8 +163,8 @@ export default function findInArray<T>(
   callback: (element: T, index: number, array: T[]) => boolean,
   ...args: any[]
 ): T | undefined {
-  if (typeof callback !== "function") {
-    throw new TypeError("callback must be a function");
+  if (typeof callback !== 'function') {
+    throw new TypeError('callback must be a function');
   }
 
   const list = Object(arr);

@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
 //@ts-nocheck
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import anime from "animejs";
-import Image from "next/image";
+import anime from 'animejs';
+import Image from 'next/image';
 
-import { contactData } from "@/lib/data";
+import { contactData } from '@/lib/data';
 
 interface SplashScreenProps {
   finishLoading: () => void;
@@ -16,44 +16,44 @@ const SplashScreen = ({ finishLoading }: SplashScreenProps) => {
   const [isMounted, setIsMounted] = useState(false);
   const animate = () => {
     const loader = anime.timeline({
-      complete: () => finishLoading(),
+      complete: () => finishLoading()
     });
 
     loader
       .add({
-        targets: "#logo",
+        targets: '#logo',
         delay: 0,
         scale: 1,
         duration: 500,
-        easing: "easeInOutExpo",
+        easing: 'easeInOutExpo'
       })
       .add({
-        targets: "#logo",
+        targets: '#logo',
         delay: 100,
         scale: 1.25,
         duration: 500,
-        easing: "easeInOutExpo",
+        easing: 'easeInOutExpo'
       })
       .add({
-        targets: "#logo",
+        targets: '#logo',
         delay: 100,
         scale: 1,
         duration: 500,
-        easing: "easeInOutExpo",
+        easing: 'easeInOutExpo'
       })
       .add({
-        targets: "#logo",
+        targets: '#logo',
         delay: 100,
         scale: 1.25,
         duration: 500,
-        easing: "easeInOutExpo",
+        easing: 'easeInOutExpo'
       })
       .add({
-        targets: "#logo",
+        targets: '#logo',
         delay: 100,
         scale: 1,
         duration: 500,
-        easing: "easeInOutExpo",
+        easing: 'easeInOutExpo'
       });
   };
 
@@ -65,18 +65,18 @@ const SplashScreen = ({ finishLoading }: SplashScreenProps) => {
   //@ts-ignore
   return (
     <div
-      className="flex items-center justify-center"
+      className='flex items-center justify-center'
       //   isMounted={isMounted}
     >
       <Image
-        id="logo"
+        id='logo'
         src={contactData.imageUrl}
         alt={contactData.name}
-        width="250"
-        height="250"
-        quality="100"
+        width='250'
+        height='250'
+        quality='100'
         priority={true}
-        className="h-35 w-35 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+        className='h-35 w-35 rounded-full object-cover border-[0.35rem] border-white shadow-xl'
       />
       {/* <Image id="logo" src={contactData.imageUrl} alt="" width={60} height={60} /> */}
     </div>

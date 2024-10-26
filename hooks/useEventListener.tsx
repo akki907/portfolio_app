@@ -1,29 +1,29 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 type AllEventMaps = HTMLElementEventMap & DocumentEventMap & WindowEventMap;
 
 export function useEventListener<K extends keyof HTMLElementEventMap>(
   type: K,
   listener: (event: HTMLElementEventMap[K]) => void,
-  element: HTMLElement,
+  element: HTMLElement
 ): void;
 
 export function useEventListener<K extends keyof DocumentEventMap>(
   type: K,
   listener: (event: DocumentEventMap[K]) => void,
-  element: Document,
+  element: Document
 ): void;
 
 export function useEventListener<K extends keyof WindowEventMap>(
   type: K,
   listener: (event: WindowEventMap[K]) => void,
-  element?: Window,
+  element?: Window
 ): void;
 
 export function useEventListener<K extends keyof AllEventMaps>(
   type: K,
   listener: (event: AllEventMaps[K]) => void,
-  element?: HTMLElement | Document | Window | null,
+  element?: HTMLElement | Document | Window | null
 ) {
   const listenerRef = useRef(listener);
 
@@ -38,16 +38,10 @@ export function useEventListener<K extends keyof AllEventMaps>(
       return listenerRef.current(ev);
     };
 
-    el?.addEventListener(
-      type,
-      internalListener as EventListenerOrEventListenerObject,
-    );
+    el?.addEventListener(type, internalListener as EventListenerOrEventListenerObject);
 
     return () => {
-      el?.removeEventListener(
-        type,
-        internalListener as EventListenerOrEventListenerObject,
-      );
+      el?.removeEventListener(type, internalListener as EventListenerOrEventListenerObject);
     };
   }, [type, element]);
 }

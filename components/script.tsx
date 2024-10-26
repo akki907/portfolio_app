@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react';
 
-import Script from "next/script";
+import Script from 'next/script';
 
-import { CHATPORT_APP_ID, GTAG } from "@/lib/constants";
+import { CHATPORT_APP_ID, GTAG } from '@/lib/constants';
 
 const Scripts = React.memo(() => {
   return (
     <>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GTAG}`}
-        strategy="afterInteractive"
+        strategy='afterInteractive'
       />
-      <Script strategy="afterInteractive" id="gtag-config">
+      <Script strategy='afterInteractive' id='gtag-config'>
         {`
             window.dataLayer = window.dataLayer || [];
             function gtag() { dataLayer.push(arguments); }
@@ -37,6 +37,6 @@ const Scripts = React.memo(() => {
   );
 });
 
-Scripts.displayName = "Scripts";
+Scripts.displayName = 'Scripts';
 
 export default Scripts;

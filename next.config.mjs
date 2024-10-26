@@ -7,11 +7,11 @@ const nextConfig = {
       //   hostname: "utfs.io",
       // },
       {
-        protocol: "https",
-        hostname: "utfs.io",
-      },
-    ],
-  },
+        protocol: 'https',
+        hostname: 'utfs.io'
+      }
+    ]
+  }
 };
 
 export default nextConfig;

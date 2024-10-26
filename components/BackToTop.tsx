@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 // import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 // import {faChevronUp} from '@fortawesome/free-solid-svg-icons';
-import { FaCircleChevronUp } from "react-icons/fa6";
+import { FaCircleChevronUp } from 'react-icons/fa6';
 
-import { Button } from "./ui/button";
+import { Button } from './ui/button';
 
 // this will show a "Back to Top" button when the user scrolls down from the top of the page
 const BackToTop = () => {
@@ -20,24 +20,24 @@ const BackToTop = () => {
       }
     };
 
-    window.addEventListener("scroll", toggleVisibility);
+    window.addEventListener('scroll', toggleVisibility);
 
     return () => {
-      window.removeEventListener("scroll", toggleVisibility);
+      window.removeEventListener('scroll', toggleVisibility);
     };
   }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth'
     });
   };
 
   return (
     <>
       {isVisible && (
-        <Button className="back-to-top" onClick={scrollToTop}>
+        <Button className='back-to-top' onClick={scrollToTop}>
           <FaCircleChevronUp />
         </Button>
       )}

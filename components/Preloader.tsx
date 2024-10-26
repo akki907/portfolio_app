@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Preloader = ({ setLoading }: any) => {
   const [counter, setCounter] = useState(0);
@@ -9,9 +9,7 @@ const Preloader = ({ setLoading }: any) => {
     const count = setInterval(() => {
       //@ts-ignore
       setCounter((counter) =>
-        counter < 100
-          ? counter + 1
-          : (clearInterval(count), setCounter(100), reveal()),
+        counter < 100 ? counter + 1 : (clearInterval(count), setCounter(100), reveal())
       );
     }, 25);
   }, []);
@@ -22,8 +20,8 @@ const Preloader = ({ setLoading }: any) => {
 
   return (
     <AppContainer>
-      <div className="loader">
-        <div data-glitch="Loading..." className="glitch">
+      <div className='loader'>
+        <div data-glitch='Loading...' className='glitch'>
           Loading...
         </div>
       </div>
@@ -67,8 +65,7 @@ const AppContainer = styled.div`
   }
 
   .glitch:after {
-    animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both
-      infinite;
+    animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
     color: #00e571;
     z-index: -2;
   }
