@@ -1,49 +1,48 @@
+import { useEffect, useState } from "react";
 
-import {useEffect, useState} from 'react';
 // import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 // import {faChevronUp} from '@fortawesome/free-solid-svg-icons';
 import { FaCircleChevronUp } from "react-icons/fa6";
-import { Button } from './ui/button';
+
+import { Button } from "./ui/button";
 
 // this will show a "Back to Top" button when the user scrolls down from the top of the page
 const BackToTop = () => {
-    const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
-    useEffect(() => {
-        // Show the "Back to Top" button when the user scrolls
-        const toggleVisibility = () => {
-            if (window.pageYOffset > 300) {
-                setIsVisible(true);
-            } else {
-                setIsVisible(false);
-            }
-        };
-
-        window.addEventListener('scroll', toggleVisibility);
-
-        return () => {
-            window.removeEventListener('scroll', toggleVisibility);
-        };
-    }, []);
-
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
+  useEffect(() => {
+    // Show the "Back to Top" button when the user scrolls
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
     };
 
-    return (
-        <>
-            {isVisible && (
-                <Button className="back-to-top" onClick={scrollToTop}>
-                    <FaCircleChevronUp />
-                </Button>
-            )}
+    window.addEventListener("scroll", toggleVisibility);
 
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
+  }, []);
 
-        </>
-    );
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <>
+      {isVisible && (
+        <Button className="back-to-top" onClick={scrollToTop}>
+          <FaCircleChevronUp />
+        </Button>
+      )}
+    </>
+  );
 };
 
 export default BackToTop;

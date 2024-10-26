@@ -1,6 +1,9 @@
 "use client";
+
 import React, { useState } from "react";
+
 import { motion } from "framer-motion";
+
 import { cn } from "@/lib/utils";
 
 export const WobbleCard = ({
@@ -38,7 +41,7 @@ export const WobbleCard = ({
       }}
       className={cn(
         "mx-auto w-full bg-indigo-800  relative rounded-2xl overflow-hidden",
-        containerClassName
+        containerClassName,
       )}
     >
       <div

@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useEffect, useState } from "react";
+
+import { AnimatePresence, motion } from "framer-motion";
 
 interface TypingEffectProps {
-text: string;
+  text: string;
 }
 
-const TypingEffect = ({ text='' }:TypingEffectProps) => {
+const TypingEffect = ({ text = "" }: TypingEffectProps) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {

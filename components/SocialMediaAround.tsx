@@ -1,12 +1,15 @@
 import React from "react";
-import {  motion } from "framer-motion";
-import { contactData } from "@/lib/data";
-type IconProps = {
-    href: string;
-    Icon:any;
-  };
 
-const IconClickableWithAnimation = (props:IconProps) => {
+import { motion } from "framer-motion";
+
+import { contactData } from "@/lib/data";
+
+type IconProps = {
+  href: string;
+  Icon: any;
+};
+
+const IconClickableWithAnimation = (props: IconProps) => {
   return (
     <motion.div
       whileHover={{
@@ -16,9 +19,12 @@ const IconClickableWithAnimation = (props:IconProps) => {
       className=""
     >
       <a href={props.href} className="" target={"_blank"} rel="noreferrer">
-        <div className={"w-6 h-6 text-gray-400  hover:text-AAsecondary fill-current hover:cursor-pointer"} >
-        {props.Icon}
-
+        <div
+          className={
+            "w-6 h-6 text-gray-400  hover:text-AAsecondary fill-current hover:cursor-pointer"
+          }
+        >
+          {props.Icon}
         </div>
       </a>
     </motion.div>
@@ -35,10 +41,15 @@ export default function SocialMediaAround(props: { finishedLoading: boolean }) {
       >
         <div className="flex flex-col space-y-8 justify-center items-center">
           <div className="flex flex-col justify-center items-center space-y-5">
-          {Object.values(contactData.socialMedia).map((iconData, index) => {
-            return <IconClickableWithAnimation key={index} href={iconData.link} Icon={iconData.icon} />;
-          })}
-          
+            {Object.values(contactData.socialMedia).map((iconData, index) => {
+              return (
+                <IconClickableWithAnimation
+                  key={index}
+                  href={iconData.link}
+                  Icon={iconData.icon}
+                />
+              );
+            })}
           </div>
           <div className="h-28 w-0.5 bg-gray-400"></div>
         </div>
@@ -59,9 +70,15 @@ export default function SocialMediaAround(props: { finishedLoading: boolean }) {
             }}
             className=""
           >
-            <a className="liner-background" href={`mailto:${contactData.email}`} target={"_blank"} rel="noreferrer">
+            <a
+              className="liner-background"
+              href={`mailto:${contactData.email}`}
+              target={"_blank"}
+              rel="noreferrer"
+            >
               <span className=" font-Header tracking-wider text-gray-400 hover:text-AAsecondary hover:cursor-pointer">
-                ak.akki907<span className="text-AAsecondary">@</span>gmail<span className="text-AAsecondary">.</span>com
+                ak.akki907<span className="text-AAsecondary">@</span>gmail
+                <span className="text-AAsecondary">.</span>com
               </span>
             </a>
           </motion.div>

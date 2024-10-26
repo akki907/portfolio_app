@@ -1,16 +1,19 @@
 "use client";
 
-import Image from "next/image";
 import React from "react";
+
+import { useActiveSectionContext } from "@/context/active-section-context";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
-import { useSectionInView } from "@/lib/hooks";
-import { useActiveSectionContext } from "@/context/active-section-context";
-import { contactData } from "@/lib/data";
-import { Button } from "./ui/button";
 import Typewriter from "typewriter-effect";
+
+import { contactData } from "@/lib/data";
+import { useSectionInView } from "@/lib/hooks";
+
+import { Button } from "./ui/button";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
@@ -45,7 +48,6 @@ export default function Intro() {
                   className="h-35 w-35 rounded-full object-cover  shadow-xl z-[5] w-full h-full transition-all duration-400 "
                 />
               </div>
-
             )}
           </motion.div>
         </div>
@@ -60,8 +62,21 @@ export default function Intro() {
           Hello <span className="wave">👋</span> I am {contactData.name}
         </div>
         <div className="liner-background">
-          <Typewriter options={{ strings: ["FullStack Developer", "Front End Developer", "React Js Developer", "Javascript Developer", "Node.js Developer", "Python Developer"], autoStart: true, loop: true, deleteSpeed: 30 }} />
-
+          <Typewriter
+            options={{
+              strings: [
+                "FullStack Developer",
+                "Front End Developer",
+                "React Js Developer",
+                "Javascript Developer",
+                "Node.js Developer",
+                "Python Developer",
+              ],
+              autoStart: true,
+              loop: true,
+              deleteSpeed: 30,
+            }}
+          />
         </div>
       </motion.h1>
 
@@ -94,9 +109,6 @@ export default function Intro() {
           Resume
           <HiDownload className="group-hover:translate-y-1 transition" />
         </a>
-
-
-
       </motion.div>
     </section>
   );

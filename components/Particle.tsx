@@ -1,17 +1,16 @@
 "use client";
 
 import { useCallback } from "react";
+
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
-
-const Particle = ({color="#EE0F0F"}) => {
+const Particle = ({ color = "#EE0F0F" }) => {
   const particlesInit = useCallback(async (engine: any) => {
     await loadFull(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async () => {
-  }, []);
+  const particlesLoaded = useCallback(async () => {}, []);
   return (
     <Particles
       className="h-screen"

@@ -1,14 +1,14 @@
 import React from "react";
+
+import AreenaImg from "@/public/projects/areena.png";
+import lashbrookImg from "@/public/projects/lashbrook.png";
+import suitepeachImg from "@/public/projects/suitepeach.png";
+import { BsLinkedin, BsStackOverflow } from "react-icons/bs";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaGithubSquare, FaMediumM } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import AreenaImg from "@/public/projects/areena.png";
-import suitepeachImg from "@/public/projects/suitepeach.png";
-import lashbrookImg from "@/public/projects/lashbrook.png";
-import { TbBrandLeetcode } from "react-icons/tb";
-
-import { BsLinkedin, BsStackOverflow } from "react-icons/bs";
 import { PiDevToLogoBold } from "react-icons/pi";
+import { TbBrandLeetcode } from "react-icons/tb";
 
 export const links = [
   {
@@ -68,10 +68,11 @@ export const experiencesData: ExperinceType[] = [
   {
     title: "Senior Software Developer",
     location: "Pune, India",
-    description: "Worked as full-stack developer. My stack includes React, TypeScript, Node.js, Aws, ReactNative , golang , Aws Lambda, Electron.js",
+    description:
+      "Worked as full-stack developer. My stack includes React, TypeScript, Node.js, Aws, ReactNative , golang , Aws Lambda, Electron.js",
     icon: React.createElement(CgWorkAlt),
     date: "2021 - Present",
-    company: 'Tech9'
+    company: "Tech9",
   },
   {
     title: "Full-Stack Developer",
@@ -80,7 +81,7 @@ export const experiencesData: ExperinceType[] = [
       "Worked as full-stack developer. My stack includes React, TypeScript, Angular,Python.",
     icon: React.createElement(CgWorkAlt),
     date: "2018 - 2021",
-    company: 'Ignite Solutions Pvt. Ltd.'
+    company: "Ignite Solutions Pvt. Ltd.",
   },
   {
     title: "FullStack Developer",
@@ -89,7 +90,7 @@ export const experiencesData: ExperinceType[] = [
       "I worked as a Fullstack-end developer for 1 years. Worked on 3 projects two of them was as fullstack and one was as a backend.",
     icon: React.createElement(CgWorkAlt),
     date: "2017 - 2018",
-    company: 'Geek Informatic Pvt. Ltd.'
+    company: "Geek Informatic Pvt. Ltd.",
   },
   {
     title: "Software Intern",
@@ -98,20 +99,26 @@ export const experiencesData: ExperinceType[] = [
       "In Last Semester of M.C.A ,I had the privilege of collaborating with a dynamic startup where I played a pivotal role in completing a crucial feed system. Leveraging my expertise in full-stack development and my keen problem-solving abilities, I contributed to the design, development, and implementation of this system, ensuring its seamless integration and functionality.",
     icon: React.createElement(LuGraduationCap),
     date: "2016 - 2017",
-    company: 'SmartWinnr'
+    company: "SmartWinnr",
   },
 ] as const;
-
-
 
 export const projectsData = [
   {
     title: "SuitePeach",
     description:
       "I worked as a full-stack developer on this startup project for 2 years. Edtech for dance.",
-    tags: ["React", "Node.js", "php", "Electron.js", "Aws", "sass", "Aws-chimes"],
+    tags: [
+      "React",
+      "Node.js",
+      "php",
+      "Electron.js",
+      "Aws",
+      "sass",
+      "Aws-chimes",
+    ],
     imageUrl: suitepeachImg,
-    link: "https://app.suitepeach.com/"
+    link: "https://app.suitepeach.com/",
   },
   {
     title: "Areena",
@@ -119,7 +126,7 @@ export const projectsData = [
       "I was the front-end developer. Gaming Platform for storts in us.",
     tags: ["React", "TypeScript", "Node.js", "Python", "Redux", "ansible"],
     imageUrl: AreenaImg,
-    link: "https://www.areenasports.com/"
+    link: "https://www.areenasports.com/",
   },
   {
     title: "Lashbrook",
@@ -127,7 +134,7 @@ export const projectsData = [
       "Worked as a front-end developer on this project. E-commerce website for custom jewellery builder.",
     tags: ["React", "tailwind", "redux"],
     imageUrl: lashbrookImg,
-    link: "https://www.lashbrookdesigns.com"
+    link: "https://www.lashbrookdesigns.com",
   },
 ] as const;
 
@@ -156,36 +163,47 @@ export const contactData = {
   phone_no: "7598608395",
   name: "Akash Kumar",
   projectLink: "https://github.com/akki907/portfolio_app",
-  typewriterOptions: { strings: ["FullStack Developer", "Front End Developer", "React Js Developer", "Javascript Developer", "Node.js Developer", "Python Developer"], autoStart: true, loop: true, deleteSpeed: 30 },
+  typewriterOptions: {
+    strings: [
+      "FullStack Developer",
+      "Front End Developer",
+      "React Js Developer",
+      "Javascript Developer",
+      "Node.js Developer",
+      "Python Developer",
+    ],
+    autoStart: true,
+    loop: true,
+    deleteSpeed: 30,
+  },
   socialMedia: {
     linkedin: {
       link: "https://www.linkedin.com/in/akki907/",
-      icon: React.createElement(BsLinkedin)
+      icon: React.createElement(BsLinkedin),
     },
     stackoverflow: {
       link: "https://stackoverflow.com/users/6021306/akash-kumar",
-      icon: React.createElement(BsStackOverflow)
+      icon: React.createElement(BsStackOverflow),
     },
     github: {
       link: "https://github.com/akki907",
-      icon: React.createElement(FaGithubSquare)
-
+      icon: React.createElement(FaGithubSquare),
     },
     medium: {
       link: "https://medium.com/@ak.akki907",
-      icon: React.createElement(FaMediumM)
+      icon: React.createElement(FaMediumM),
     },
     leetcode: {
       link: "https://leetcode.com/u/akki907/",
-      icon: React.createElement(TbBrandLeetcode)
+      icon: React.createElement(TbBrandLeetcode),
     },
     devTo: {
       link: "https://dev.to/akki907",
-      icon: React.createElement(PiDevToLogoBold)
-    }
+      icon: React.createElement(PiDevToLogoBold),
+    },
   },
-  githubUsername: 'akki907',
-  cvLink: 'https://utfs.io/f/vAfgIf24jA5WjqMNfCvw3UWbH4ErNeSzQPMn5YxBvpiKGdJj',
+  githubUsername: "akki907",
+  cvLink: "https://utfs.io/f/vAfgIf24jA5WjqMNfCvw3UWbH4ErNeSzQPMn5YxBvpiKGdJj",
   intro: "Akash is a full-stack developer with 7 years of experience.",
   imageUrl: "https://utfs.io/f/d45c7325-a47a-464a-9433-95f16bfd7432-vks6pf.png",
   aboutMe: `After graduating with a degree in
@@ -200,15 +218,13 @@ export const contactData = {
   learn new technologies. I am currently looking for a
   full-time position as a software developer.
   
-  When I'm not coding, I enjoy Traveling watching movies, and learning new things.`
+  When I'm not coding, I enjoy Traveling watching movies, and learning new things.`,
 } as const;
-
 
 export const DEFAULT_THEME = "dark" as const;
 
 export const METADATA = {
   title: "Portfolio | Akash Kumar",
-  description:
-    aboutData.description,
+  description: aboutData.description,
   siteUrl: "https://portfolio-app-akash.vercel.app/",
 };

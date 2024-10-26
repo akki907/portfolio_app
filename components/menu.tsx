@@ -1,7 +1,6 @@
-
+import { Dispatch, SetStateAction } from "react";
 
 import { links } from "@/lib/data";
-import { Dispatch, SetStateAction } from "react";
 
 const Menu = ({
   setmenuVisible,

@@ -1,13 +1,13 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export const validateString = (
   value: unknown,
-  maxLength: number
+  maxLength: number,
 ): value is string => {
   if (!value || typeof value !== "string" || value.length > maxLength) {
     return false;
@@ -50,7 +50,12 @@ export const textVariant = (delay: number) => {
   };
 };
 
-export const fadeIn = (direction: any, type: string, delay: any, duration: any) => {
+export const fadeIn = (
+  direction: any,
+  type: string,
+  delay: any,
+  duration: any,
+) => {
   return {
     hidden: {
       x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
@@ -90,7 +95,12 @@ export const zoomIn = (delay: any, duration: any) => {
   };
 };
 
-export const slideIn = (direction: any, type: any, delay: any, duration: any) => {
+export const slideIn = (
+  direction: any,
+  type: any,
+  delay: any,
+  duration: any,
+) => {
   return {
     hidden: {
       x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
@@ -166,25 +176,25 @@ export default function findInArray<T>(
   callback: (element: T, index: number, array: T[]) => boolean,
   ...args: any[]
 ): T | undefined {
-  if (typeof callback !== 'function') {
-    throw new TypeError('callback must be a function')
+  if (typeof callback !== "function") {
+    throw new TypeError("callback must be a function");
   }
 
-  const list = Object(arr)
+  const list = Object(arr);
   // Makes sure it always has a positive integer as length.
-  const length = list.length >>> 0
-  const thisArg = args[2]
+  const length = list.length >>> 0;
+  const thisArg = args[2];
 
   for (let i = 0; i < length; i++) {
-    const element = list[i]
+    const element = list[i];
     if (callback.call(thisArg, element, i, list)) {
-      return element
+      return element;
     }
   }
 
-  return undefined
+  return undefined;
 }
 
 export const getInitial = (name: string) => {
   return name.charAt(0).toUpperCase();
-}
+};

@@ -1,34 +1,34 @@
-
 "use client";
 
-import React, { useState, Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
+
+import { domAnimation, LazyMotion } from "framer-motion";
+import Head from "next/head";
+
+import { METADATA } from "@/lib/data";
 import About from "@/components/about";
 import Contact from "@/components/contact";
 import Experience from "@/components/experience";
+import Footer from "@/components/footer";
+import GithubGraphSection from "@/components/Github-graph";
+import HeaderUpdate from "@/components/HeaderUpdate";
 import Intro from "@/components/intro";
+import Layout from "@/components/Layout";
+import ProgressIndicator from "@/components/ProgressIndicator";
 import Projects from "@/components/projects";
+import Scripts from "@/components/script";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
-import StarsCanvasBackGround from "@/components/StarBackground";
-import ProgressIndicator from "@/components/ProgressIndicator";
-import Layout from "@/components/Layout";
-import Head from "next/head";
-import { METADATA } from "@/lib/data";
-import HeaderUpdate from "@/components/HeaderUpdate";
-import Scripts from "@/components/script";
-import { domAnimation, LazyMotion } from "framer-motion"
-import GithubGraphSection from "@/components/Github-graph";
-import Footer from "@/components/footer";
-import Startup from "@/components/Starup";
 import SocialMediaAround from "@/components/SocialMediaAround";
+import StarsCanvasBackGround from "@/components/StarBackground";
+import Startup from "@/components/Starup";
 
 export interface IDesktop {
   isDesktop: boolean;
 }
 export default function Home() {
-  const [loading, setLoading]: [boolean, Dispatch<SetStateAction<boolean>>] = useState(true);
-
-
+  const [loading, setLoading]: [boolean, Dispatch<SetStateAction<boolean>>] =
+    useState(true);
 
   return (
     <>
@@ -60,7 +60,6 @@ export default function Home() {
             </LazyMotion>
           </main>
         )}
-
       </Layout>
     </>
   );

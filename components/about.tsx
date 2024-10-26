@@ -1,12 +1,14 @@
 "use client";
 
 import React from "react";
-import SectionHeading from "./section-heading";
-import { motion } from "framer-motion";
-import { useSectionInView } from "@/lib/hooks";
-import { TextGenerateEffect } from "./ui/text-generate-effect";
-import { contactData } from "@/lib/data";
 
+import { motion } from "framer-motion";
+
+import { contactData } from "@/lib/data";
+import { useSectionInView } from "@/lib/hooks";
+
+import SectionHeading from "./section-heading";
+import { TextGenerateEffect } from "./ui/text-generate-effect";
 
 export default function About() {
   const { ref } = useSectionInView("About");
@@ -21,7 +23,10 @@ export default function About() {
       id="about"
     >
       <SectionHeading>About me</SectionHeading>
-      <TextGenerateEffect className="mb-3 font-medium" words={contactData.aboutMe} />      
+      <TextGenerateEffect
+        className="mb-3 font-medium"
+        words={contactData.aboutMe}
+      />
     </motion.section>
   );
 }

@@ -1,7 +1,8 @@
 "use client";
 
+import React, { createContext, useContext, useState } from "react";
+
 import type { SectionName } from "@/lib/types";
-import React, { useState, createContext, useContext } from "react";
 
 type ActiveSectionContextProviderProps = {
   children: React.ReactNode;
@@ -42,7 +43,7 @@ export function useActiveSectionContext() {
 
   if (context === null) {
     throw new Error(
-      "useActiveSectionContext must be used within an ActiveSectionContextProvider"
+      "useActiveSectionContext must be used within an ActiveSectionContextProvider",
     );
   }
 

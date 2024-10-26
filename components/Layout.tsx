@@ -1,5 +1,6 @@
-import { METADATA, contactData } from "@/lib/data";
 import Head from "next/head";
+
+import { contactData, METADATA } from "@/lib/data";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -19,10 +20,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <meta property="og:description" content={METADATA.description} />
         <meta property="og:url" content={METADATA.siteUrl} />
         <meta property="og:site_name" content={METADATA.title} />
-        <meta
-          property="og:image"
-          content={contactData.imageUrl}
-        />
+        <meta property="og:image" content={contactData.imageUrl} />
         <meta property="og:image:secure_url" content={METADATA.siteUrl} />
         <meta property="og:image:width" content="1440" />
         <meta property="og:image:height" content="800" />

@@ -1,7 +1,8 @@
 "use client";
 
+import React, { createContext, useContext, useEffect, useState } from "react";
+
 import { DEFAULT_THEME } from "@/lib/data";
-import React, { useEffect, useState, createContext, useContext } from "react";
 
 type Theme = "light" | "dark";
 
@@ -34,7 +35,8 @@ export default function ThemeContextProvider({
   };
 
   useEffect(() => {
-    const localTheme = DEFAULT_THEME || window.localStorage.getItem("theme") as Theme | null;
+    const localTheme =
+      DEFAULT_THEME || (window.localStorage.getItem("theme") as Theme | null);
 
     // if (localTheme) {
     //   setTheme(localTheme);
@@ -43,8 +45,8 @@ export default function ThemeContextProvider({
     //     document.documentElement.classList.add("dark");
     //   }
     // } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme(localTheme);
-      document.documentElement.classList.add(localTheme);
+    setTheme(localTheme);
+    document.documentElement.classList.add(localTheme);
     // }
   }, []);
 

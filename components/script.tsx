@@ -1,11 +1,12 @@
-import Script from "next/script";
 import React from "react";
+
+import Script from "next/script";
+
 import { CHATPORT_APP_ID, GTAG } from "@/lib/constants";
 
 const Scripts = React.memo(() => {
   return (
     <>
-    
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GTAG}`}
         strategy="afterInteractive"

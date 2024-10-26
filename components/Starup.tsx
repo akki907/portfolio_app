@@ -1,12 +1,14 @@
-import React, { useEffect, Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction, useEffect } from "react";
+
 import { motion } from "framer-motion";
+
 import { contactData } from "@/lib/data";
 import { getInitial } from "@/lib/utils";
+
 type LoadingScreenProps = {
   setLoading: Dispatch<SetStateAction<boolean>>;
 };
 const Startup = ({ setLoading }: LoadingScreenProps) => {
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
@@ -27,7 +29,6 @@ const Startup = ({ setLoading }: LoadingScreenProps) => {
       WidthBy2 = window.innerWidth / 2 - 28;
       HeightBy2 = window.innerHeight / 2 - 40;
     }
-
   }
 
   return (
@@ -35,10 +36,16 @@ const Startup = ({ setLoading }: LoadingScreenProps) => {
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}
       transition={{ opacity: { delay: 4.9, duration: 0 } }}
-      className="absolute cursor-progress h-full w-full flex justify-center items-center bg-StartupBackground">
+      className="absolute cursor-progress h-full w-full flex justify-center items-center bg-StartupBackground"
+    >
       <motion.div
         initial={{ opacity: 0, x: 0, y: 0, scale: "100%" }}
-        animate={{ opacity: [1, 0, 1], x: -WidthBy2, y: -HeightBy2, scale: greaterThanSmall ? "57%" : "50%" }}
+        animate={{
+          opacity: [1, 0, 1],
+          x: -WidthBy2,
+          y: -HeightBy2,
+          scale: greaterThanSmall ? "57%" : "50%",
+        }}
         transition={{
           opacity: { delay: 3, duration: 1.5 },
           x: { duration: 0.5, delay: 4.5 },
