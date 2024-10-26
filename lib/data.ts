@@ -5,6 +5,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import AreenaImg from "@/public/projects/areena.png";
 import suitepeachImg from "@/public/projects/suitepeach.png";
 import lashbrookImg from "@/public/projects/lashbrook.png";
+import { TbBrandLeetcode } from "react-icons/tb";
 
 import { BsLinkedin, BsStackOverflow } from "react-icons/bs";
 import { PiDevToLogoBold } from "react-icons/pi";
@@ -105,14 +106,6 @@ export const experiencesData: ExperinceType[] = [
 
 export const projectsData = [
   {
-    title: "Lashbrook",
-    description:
-      "Worked as a front-end developer on this project. E-commerce website for custom jewellery builder.",
-    tags: ["React","tailwind","redux"],
-    imageUrl: lashbrookImg,
-    link: "https://www.lashbrookdesigns.com"
-  },
-  {
     title: "SuitePeach",
     description:
       "I worked as a full-stack developer on this startup project for 2 years. Edtech for dance.",
@@ -128,13 +121,14 @@ export const projectsData = [
     imageUrl: AreenaImg,
     link: "https://www.areenasports.com/"
   },
-  // {
-  //   title: "Word Analytics",
-  //   description:
-  //     "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-  //   tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-  //   imageUrl: wordanalyticsImg,
-  // },
+  {
+    title: "Lashbrook",
+    description:
+      "Worked as a front-end developer on this project. E-commerce website for custom jewellery builder.",
+    tags: ["React", "tailwind", "redux"],
+    imageUrl: lashbrookImg,
+    link: "https://www.lashbrookdesigns.com"
+  },
 ] as const;
 
 export const skillsData = [
@@ -181,16 +175,20 @@ export const contactData = {
       link: "https://medium.com/@ak.akki907",
       icon: React.createElement(FaMediumM)
     },
-    devTo:{
-      link:"https://dev.to/akki907",
-      icon:React.createElement(PiDevToLogoBold)
+    leetcode: {
+      link: "https://leetcode.com/u/akki907/",
+      icon: React.createElement(TbBrandLeetcode)
+    },
+    devTo: {
+      link: "https://dev.to/akki907",
+      icon: React.createElement(PiDevToLogoBold)
     }
   },
   githubUsername: 'akki907',
-  cvLink: 'https://drive.google.com/file/d/1VeEvSB-5h89KLQ2ENpSCShkytSYQT-bP/view?usp=sharing',
+  cvLink: 'https://utfs.io/f/vAfgIf24jA5WjqMNfCvw3UWbH4ErNeSzQPMn5YxBvpiKGdJj',
   intro: "Akash is a full-stack developer with 7 years of experience.",
   imageUrl: "https://utfs.io/f/d45c7325-a47a-464a-9433-95f16bfd7432-vks6pf.png",
-  aboutMe:`After graduating with a degree in
+  aboutMe: `After graduating with a degree in
   Computer science, I decided to pursue my
   passion for programming. I have been coding for 10 years now.
   My favorite part of programming is the

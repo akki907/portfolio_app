@@ -1,5 +1,7 @@
 import React, { useEffect, Dispatch, SetStateAction } from "react";
 import { motion } from "framer-motion";
+import { contactData } from "@/lib/data";
+import { getInitial } from "@/lib/utils";
 type LoadingScreenProps = {
   setLoading: Dispatch<SetStateAction<boolean>>;
 };
@@ -11,7 +13,7 @@ const Startup = ({ setLoading }: LoadingScreenProps) => {
     }, 4800);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [setLoading]);
 
   let WidthBy2 = 0;
   let HeightBy2 = 0;
@@ -119,7 +121,7 @@ const Startup = ({ setLoading }: LoadingScreenProps) => {
           transition={{ scale: { delay: 1.5, duration: 1.5 } }}
           className="text-AAsecondary font-Text2 text-4xl"
         >
-          A
+          {getInitial(contactData.name)}
         </motion.span>
       </motion.div>
     </motion.div>

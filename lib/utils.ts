@@ -32,7 +32,7 @@ export const getErrorMessage = (error: unknown): string => {
   return message;
 };
 
-export const textVariant = (delay:number) => {
+export const textVariant = (delay: number) => {
   return {
     hidden: {
       y: -50,
@@ -50,7 +50,7 @@ export const textVariant = (delay:number) => {
   };
 };
 
-export const fadeIn = (direction:any, type:string, delay:any, duration:any) => {
+export const fadeIn = (direction: any, type: string, delay: any, duration: any) => {
   return {
     hidden: {
       x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
@@ -71,7 +71,7 @@ export const fadeIn = (direction:any, type:string, delay:any, duration:any) => {
   };
 };
 
-export const zoomIn = (delay:any, duration:any) => {
+export const zoomIn = (delay: any, duration: any) => {
   return {
     hidden: {
       scale: 0,
@@ -90,7 +90,7 @@ export const zoomIn = (delay:any, duration:any) => {
   };
 };
 
-export const slideIn = (direction:any, type:any, delay:any, duration:any) => {
+export const slideIn = (direction: any, type: any, delay: any, duration: any) => {
   return {
     hidden: {
       x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
@@ -109,7 +109,7 @@ export const slideIn = (direction:any, type:any, delay:any, duration:any) => {
   };
 };
 
-export const staggerContainer = (staggerChildren:any, delayChildren:any) => {
+export const staggerContainer = (staggerChildren: any, delayChildren: any) => {
   return {
     hidden: {},
     show: {
@@ -183,4 +183,8 @@ export default function findInArray<T>(
   }
 
   return undefined
+}
+
+export const getInitial = (name: string) => {
+  return name.charAt(0).toUpperCase();
 }

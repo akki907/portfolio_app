@@ -12,12 +12,10 @@ import Skills from "@/components/skills";
 import StarsCanvasBackGround from "@/components/StarBackground";
 import ProgressIndicator from "@/components/ProgressIndicator";
 import Layout from "@/components/Layout";
-// import AnimatedCursor from "@/components/CustomCursor";
 import Head from "next/head";
 import { METADATA } from "@/lib/data";
 import HeaderUpdate from "@/components/HeaderUpdate";
 import Scripts from "@/components/script";
-// import LoadingScreen from "@/components/LoadingScreen";
 import { domAnimation, LazyMotion } from "framer-motion"
 import GithubGraphSection from "@/components/Github-graph";
 import Footer from "@/components/footer";
@@ -56,7 +54,7 @@ export default function Home() {
               <GithubGraphSection />
               <Contact />
               <SocialMediaAround finishedLoading={loading} />
-              <Footer  />
+              <Footer />
               <StarsCanvasBackGround />
               <Scripts />
             </LazyMotion>

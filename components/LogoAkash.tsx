@@ -1,5 +1,7 @@
 import React from "react";
-import {  motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { getInitial } from "@/lib/utils";
+import { contactData } from "@/lib/data";
 
 export default function Logo() {
   return (
@@ -16,7 +18,7 @@ export default function Logo() {
           initial={{ x: 1 }}
           className="absolute h-full w-full flex justify-center items-center text-lg font-Header text-AAsecondary"
         >
-          A
+          {getInitial(contactData.name)}
         </motion.span>
 
         <motion.div animate={{ rotate: -30, y: 5 }} className="h-1 w-6 rounded bg-AAsecondary"></motion.div>
