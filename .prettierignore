@@ -1,6 +1,9 @@
-build 
-.git
 .vscode
-.next
-node_modules
 certificates
+node_modules
+.next
+build
+dist
+.vercel
+coverage
+public
