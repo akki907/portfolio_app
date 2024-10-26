@@ -8,7 +8,8 @@
     "start": "next start",
     "format:write": "prettier . --write",
     "format:check": "prettier .  --check",
-    "lint": "next lint --fix"
+    "lint": "next lint --fix",
+    "prepare": "husky"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
