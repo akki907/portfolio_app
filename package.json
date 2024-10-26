@@ -9,8 +9,9 @@
     "format:write": "prettier . --write",
     "format:check": "prettier .  --check",
     "lint": "next lint --fix",
-    "test": "prettier . --write",
-    "prepare": "husky && husky install"
+    "test": "lint-staged",
+    "prepare": "husky && husky install",
+    "pre-commit": "lint-staged" 
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -77,12 +78,10 @@
     "typescript-eslint": "^8.11.0"
   },
   "lint-staged": {
-    "*.{js, jsx,ts,tsx}": [
-      "prettier --write",
-      "eslint --max-warnings 0 ."
+    "*.{ts,tsx}": [
+         "prettier --write",
+         "eslint"
     ],
-    "*.{json,js,ts,jsx,tsx,html}": [
-      "prettier --write --ignore-unknown"
-    ]
+    "*.css": "prettier --write"
   }
 }
