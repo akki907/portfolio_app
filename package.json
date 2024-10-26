@@ -78,7 +78,8 @@
   },
   "lint-staged": {
     "*.{js, jsx,ts,tsx}": [
-      "eslint --quiet --fix"
+      "prettier --write",
+      "eslint --max-warnings 0 ."
     ],
     "*.{json,js,ts,jsx,tsx,html}": [
       "prettier --write --ignore-unknown"
