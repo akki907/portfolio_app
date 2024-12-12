@@ -9,6 +9,7 @@ import { FaGithubSquare, FaMediumM } from 'react-icons/fa';
 import { LuGraduationCap } from 'react-icons/lu';
 import { PiDevToLogoBold } from 'react-icons/pi';
 import { TbBrandLeetcode } from 'react-icons/tb';
+import { AwesomeLibrary } from '@akki907/my-awesome-library';
 
 export const links = [
     {
@@ -49,7 +50,7 @@ interface aboutDataType {
 }
 
 export const aboutData: aboutDataType = {
-    title: 'About me',
+    title: AwesomeLibrary.capitalize('about me'),
     description:
         "I'm a full-stack developer based in Pune, India. I have experience in building web applications using React, Next.js, TypeScript, Tailwind, Prisma and MongoDB.",
     imageUrl:
