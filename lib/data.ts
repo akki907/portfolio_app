@@ -148,7 +148,23 @@ export const skillsData = [
     'golang',
     'Aws',
     'Lambda',
-    'CSS'
+    'CSS',
+    'Electron.js',
+    'Aws-chimes',
+    'ansible',
+    'Angular',
+    'ReactNative',
+    'Aws-lambda',
+    'Aws-s3',
+    'GenAI',
+    'Agents',
+    'LangChain',
+    'LangGraph',
+    'CrewAI',
+    'MCP',
+    'Python',
+    'Flask',
+    'FastAPI'
 ] as const;
 
 export const contactData = {
