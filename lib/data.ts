@@ -14,7 +14,6 @@ import { AwesomeLibrary } from '@akki907/my-awesome-library';
 export const links = [
     {
         name: 'Home',
-
         hash: '#home'
     },
     {
@@ -138,17 +137,29 @@ export const skillsData = [
     'Next.js',
     'Node.js',
     'Tailwind',
-    'Prisma',
     'MongoDB',
     'Redux',
     'Express',
     'PostgreSQL',
     'Python',
-    'Framer Motion',
     'golang',
     'Aws',
     'Lambda',
-    'CSS'
+    'CSS',
+    'Electron.js',
+    'Aws-chimes',
+    'ansible',
+    'Angular',
+    'Aws-lambda',
+    'cassandra',
+    'docker',
+    'GenAI',
+    'Agents',
+    'LangChain',
+    'LangGraph',
+    'Python',
+    'FastAPI',
+    'Flask'
 ] as const;
 
 export const contactData = {
@@ -163,7 +174,8 @@ export const contactData = {
             'React Js Developer',
             'Javascript Developer',
             'Node.js Developer',
-            'Python Developer'
+            'Python Developer',
+            'GenAI Developer'
         ],
         autoStart: true,
         loop: true,
@@ -199,19 +211,28 @@ export const contactData = {
     cvLink: 'https://utfs.io/f/vAfgIf24jA5WjqMNfCvw3UWbH4ErNeSzQPMn5YxBvpiKGdJj',
     intro: 'Akash is a full-stack developer with 7 years of experience.',
     imageUrl: 'https://utfs.io/f/d45c7325-a47a-464a-9433-95f16bfd7432-vks6pf.png',
-    aboutMe: `After graduating with a degree in
-  Computer science, I decided to pursue my
-  passion for programming. I have been coding for 10 years now.
-  My favorite part of programming is the
-  problem-solving aspect. I love the
-  feeling of finally figuring out a solution to a problem. My core stack
-  is
-  React, Next.js, Node.js, golang and MongoDB
-  I am also familiar with TypeScript and Aws. I am always looking to
-  learn new technologies. I am currently looking for a
-  full-time position as a software developer.
-  
-  When I'm not coding, I enjoy Traveling watching movies, and learning new things.`
+    aboutMe: `
+    "Building digital solutions since 2017"
+
+    📊 Metrics:
+    - 7+ years in operation
+    - 100% client satisfaction
+    - ∞ learning capacity
+    - 0% giving up rate
+
+    🎯 Value Proposition:
+    We don't just write code; we craft digital experiences that users love and businesses trust.
+
+    🏆 Core Competencies:
+    - Full-stack development
+    - Problem-solving
+    - Innovation
+    - Continuous learning
+
+    📈 Growth Strategy:
+    Always learning, always improving, always delivering.
+
+    Ready to scale your next project? Let's build something amazing together!`
 } as const;
 
 export const DEFAULT_THEME = 'dark' as const;
