@@ -1,8 +1,5 @@
 import React from 'react';
 
-import AreenaImg from '@/public/projects/areena.png';
-import lashbrookImg from '@/public/projects/lashbrook.png';
-import suitepeachImg from '@/public/projects/suitepeach.png';
 import { BsLinkedin, BsStackOverflow } from 'react-icons/bs';
 import { CgWorkAlt } from 'react-icons/cg';
 import { FaGithubSquare, FaMediumM } from 'react-icons/fa';
@@ -51,9 +48,8 @@ interface aboutDataType {
 export const aboutData: aboutDataType = {
     title: 'About me',
     description:
-        "I'm a full-stack developer based in Pune, India. I have experience in building web applications using React, Next.js, TypeScript, Tailwind, Prisma and MongoDB.",
-    imageUrl:
-        'https://media.licdn.com/dms/image/D4D03AQG6bucFi1UBlw/profile-displayphoto-shrink_400_400/0/1707308234897?e=1718841600&v=beta&t=WEywbxDxeth7-wQ9ZuqjjQ7eDxoz2cenJESFmn8m4YM'
+        'Full Stack AI Engineer with 8+ years of experience building agentic systems, scalable web applications, and production AI workflows.',
+    imageUrl: '/akash-profile.png'
 } as const;
 
 interface ExperinceType {
@@ -67,103 +63,138 @@ interface ExperinceType {
 
 export const experiencesData: ExperinceType[] = [
     {
-        title: 'Senior Software Developer',
-        location: 'Pune, India',
+        title: 'Senior Software Engineer',
+        location: 'Bengaluru, India',
         description:
-            'Worked as full-stack developer. My stack includes React, TypeScript, Node.js, Aws, ReactNative , golang , Aws Lambda, Electron.js',
+            'Led end-to-end design of Agent Builder Platform with LangChain and Temporal. Built multi-agent orchestration on AWS AgentCore, architected Deep Research Agent with Temporal for durable workflow orchestration, developed CodeAct Agent with Daytona sandboxes, and implemented agentic RAG system with pgvector.',
         icon: React.createElement(CgWorkAlt),
-        date: '2021 - Present',
+        date: 'Feb 2025 - Present',
+        company: 'Grid Dynamics'
+    },
+    {
+        title: 'Senior Software Engineer',
+        location: 'Pune, India (Remote)',
+        description:
+            'Engineered cross-platform video conferencing solution using Amazon Chime, React, Electron.js, and AWS Serverless. Designed 20+ serverless REST APIs, resolved memory leak issues in Electron, and contributed to jewelry e-commerce platform redesign. Improved frontend performance through lazy loading and code splitting.',
+        icon: React.createElement(CgWorkAlt),
+        date: 'Jan 2021 - Jan 2025',
         company: 'Tech9'
     },
     {
-        title: 'Full-Stack Developer',
+        title: 'Software Engineer',
         location: 'Pune, India',
         description:
-            'Worked as full-stack developer. My stack includes React, TypeScript, Angular,Python.',
+            'Architected League Management System using React and Flask with team registration, match scheduling, and live score updates. Built secure payment service platform with Angular, integrating payment gateways and real-time transaction tracking. Optimized React application performance, reducing page load time by 40%.',
         icon: React.createElement(CgWorkAlt),
-        date: '2018 - 2021',
-        company: 'Ignite Solutions Pvt. Ltd.'
+        date: 'Aug 2018 - Jan 2021',
+        company: 'Ignite Solutions'
     },
     {
-        title: 'FullStack Developer',
+        title: 'Full Stack Developer',
         location: 'Chandigarh, India',
         description:
-            'I worked as a Fullstack-end developer for 1 years. Worked on 3 projects two of them was as fullstack and one was as a backend.',
+            'Developed video-centric job portal using MEAN stack with end-to-end features for video uploads and processing. Implemented video processing pipelines using FFmpeg. Configured and managed AWS infrastructure including ELB, Route 53, ensuring high availability and scalability.',
         icon: React.createElement(CgWorkAlt),
-        date: '2017 - 2018',
-        company: 'Geek Informatic Pvt. Ltd.'
+        date: 'Aug 2017 - Aug 2018',
+        company: 'Geek Informatic & Technology'
     },
     {
-        title: 'Software Intern',
+        title: 'Software Developer Intern',
         location: 'Hyderabad, India',
         description:
-            'In Last Semester of M.C.A ,I had the privilege of collaborating with a dynamic startup where I played a pivotal role in completing a crucial feed system. Leveraging my expertise in full-stack development and my keen problem-solving abilities, I contributed to the design, development, and implementation of this system, ensuring its seamless integration and functionality.',
+            'Contributed to development of Smartwinnr, a gamified quiz platform for enterprise training using MEAN stack. Implemented real-time functionality using Socket.io, enabling instant updates and improving user engagement and collaboration.',
         icon: React.createElement(LuGraduationCap),
-        date: '2016 - 2017',
-        company: 'SmartWinnr'
+        date: 'Dec 2016 - Jun 2017',
+        company: 'Appnovation Technology Solutions'
     }
 ] as const;
 
 export const projectsData = [
     {
-        title: 'SuitePeach',
+        title: 'Agent Builder Platform',
         description:
-            'I worked as a full-stack developer on this startup project for 2 years. Edtech for dance.',
-        tags: ['React', 'Node.js', 'php', 'Electron.js', 'Aws', 'sass', 'Aws-chimes'],
-        imageUrl: suitepeachImg,
-        link: 'https://app.suitepeach.com/'
+            'Led end-to-end design of Agent Builder Platform with LangChain and Temporal. Built FastAPI-based Dynamic Agentic Registry for agent lifecycle management and React Flow Visual Workflow Builder for no-code multi-agent pipeline composition.',
+        tags: ['LangChain', 'Temporal', 'FastAPI', 'React Flow', 'Python', 'AWS', 'Multi-Agent'],
+        link: '#'
     },
     {
-        title: 'Areena',
-        description: 'I was the front-end developer. Gaming Platform for storts in us.',
-        tags: ['React', 'TypeScript', 'Node.js', 'Python', 'Redux', 'ansible'],
-        imageUrl: AreenaImg,
-        link: 'https://www.areenasports.com/'
+        title: 'Deep Research Agent',
+        description:
+            'Architected production-grade Deep Research Agent using Temporal for durable workflow orchestration with multi-step parallel pipelines, dynamic branching, and stateful checkpointing. Enabled 100+ concurrent research sessions with fault-tolerant automatic retry.',
+        tags: ['Temporal', 'LangChain', 'Python', 'Distributed Systems', 'Workflow Orchestration'],
+        link: '#'
     },
     {
-        title: 'Lashbrook',
+        title: 'CodeAct Agent',
         description:
-            'Worked as a front-end developer on this project. E-commerce website for custom jewellery builder.',
-        tags: ['React', 'tailwind', 'redux'],
-        imageUrl: lashbrookImg,
+            'Built CodeAct Agent orchestrated via Temporal workflows where user intents are translated into executable code running in isolated Daytona sandboxes. Each activity provisions fresh workspace with full auditability.',
+        tags: ['Temporal', 'Daytona', 'Python', 'LangChain', 'Code Execution', 'Sandboxing'],
+        link: '#'
+    },
+    {
+        title: 'Agentic RAG System',
+        description:
+            'Architected agentic RAG system with Temporal-orchestrated agent that iteratively refines retrieval queries. Performs dense vector search against pgvector knowledge base, evaluates context relevance, enabling accurate multi-hop reasoning.',
+        tags: ['Temporal', 'LangChain', 'pgvector', 'PostgreSQL', 'RAG', 'Vector Search'],
+        link: '#'
+    },
+    {
+        title: 'Multi-Agent Orchestration',
+        description:
+            'Built managed multi-agent execution service on AWS AgentCore Runtime supporting CrewAI and LangGraph agents. Leveraged AgentCore Gateway as centralized MCP tool server with persistent cross-session state.',
+        tags: ['AWS AgentCore', 'CrewAI', 'LangGraph', 'MCP', 'Multi-Agent Systems'],
+        link: '#'
+    },
+    {
+        title: 'Video Conferencing Platform',
+        description:
+            'Engineered cross-platform video conferencing solution using Amazon Chime, React, Electron.js, and AWS Serverless. Designed 20+ serverless REST APIs with AWS Lambda for meeting orchestration and real-time collaboration.',
+        tags: ['React', 'Electron.js', 'Amazon Chime', 'AWS Lambda', 'Node.js', 'Serverless'],
+        link: '#'
+    },
+    {
+        title: 'League Management System',
+        description:
+            'Architected and developed League Management System using React and Flask, enabling team registration, match scheduling, live score updates, player statistics, and automated notifications.',
+        tags: ['React', 'Flask', 'Python', 'PostgreSQL', 'Real-time Updates'],
+        link: '#'
+    },
+    {
+        title: 'Lashbrook Jewelry E-commerce',
+        description:
+            'Contributed to redesign of jewelry e-commerce platform with custom jewelry builder. Optimized checkout experience, improved mobile usability, and modernized UI to drive higher conversion rates.',
+        tags: ['React', 'Tailwind', 'Redux', 'E-commerce', 'Custom Builder'],
         link: 'https://www.lashbrookdesigns.com'
     }
 ] as const;
 
 export const skillsData = [
-    'JavaScript',
-    'TypeScript',
-    'React',
+    'React.js',
     'Next.js',
+    'TypeScript',
+    'Tailwind CSS',
     'Node.js',
-    'Tailwind',
-    'Prisma',
-    'MongoDB',
-    'Redux',
-    'Express',
-    'PostgreSQL',
     'Python',
-    'Framer Motion',
-    'golang',
-    'Aws',
-    'Lambda',
-    'CSS',
-    'Electron.js',
-    'Aws-chimes',
-    'ansible',
-    'Angular',
-    'ReactNative',
-    'Aws-lambda',
-    'Aws-s3',
-    'GenAI',
-    'Agents',
+    'FastAPI',
+    'Flask',
+    'Go',
     'LangChain',
     'LangGraph',
     'CrewAI',
+    'RAG',
     'MCP',
-    'Python',
-    'Flask',
-    'FastAPI'
+    'AI Agents',
+    'Temporal',
+    'AWS',
+    'AWS AgentCore',
+    'Serverless',
+    'Docker',
+    'Kubernetes',
+    'PostgreSQL',
+    'MongoDB',
+    'Redis',
+    'System Design',
+    'Distributed Systems'
 ] as const;
 
 export const contactData = {
@@ -173,12 +204,13 @@ export const contactData = {
     projectLink: 'https://github.com/akki907/portfolio_app',
     typewriterOptions: {
         strings: [
-            'FullStack Developer',
-            'Front End Developer',
-            'React Js Developer',
-            'Javascript Developer',
-            'Node.js Developer',
-            'Python Developer'
+            'Full Stack AI Engineer',
+            'Senior Software Engineer',
+            'AI Agent Developer',
+            'Full Stack Developer',
+            'React.js Developer',
+            'Python Developer',
+            'Node.js Developer'
         ],
         autoStart: true,
         loop: true,
@@ -211,22 +243,11 @@ export const contactData = {
         }
     },
     githubUsername: 'akki907',
-    cvLink: 'https://utfs.io/f/vAfgIf24jA5WjqMNfCvw3UWbH4ErNeSzQPMn5YxBvpiKGdJj',
-    intro: 'Akash is a full-stack developer with 7 years of experience.',
-    imageUrl: 'https://utfs.io/f/d45c7325-a47a-464a-9433-95f16bfd7432-vks6pf.png',
-    aboutMe: `After graduating with a degree in
-  Computer science, I decided to pursue my
-  passion for programming. I have been coding for 10 years now.
-  My favorite part of programming is the
-  problem-solving aspect. I love the
-  feeling of finally figuring out a solution to a problem. My core stack
-  is
-  React, Next.js, Node.js, golang and MongoDB
-  I am also familiar with TypeScript and Aws. I am always looking to
-  learn new technologies. I am currently looking for a
-  full-time position as a software developer.
-  
-  When I'm not coding, I enjoy Traveling watching movies, and learning new things.`
+    cvLink: 'https://drive.google.com/file/d/1M7-D41bbpWpbUFGOgL5ZHbcKOLHkq4zZ/view?usp=sharing',
+    intro: 'Full Stack AI Engineer with 8+ years delivering enterprise-scale products',
+    imageUrl: '/akash-profile.png',
+    aboutMe:
+        "I'm a Full Stack AI Engineer with 8+ years of experience building enterprise products. Currently at Grid Dynamics, I work on agentic systems with LangChain, Temporal, and AWS. I enjoy solving hard problems and shipping reliable software from prototype to production."
 } as const;
 
 export const DEFAULT_THEME = 'dark' as const;
